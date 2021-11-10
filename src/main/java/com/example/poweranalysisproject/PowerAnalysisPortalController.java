@@ -7,6 +7,6 @@ import java.io.IOException;
 public class PowerAnalysisPortalController {
     @FXML
     protected void goToUserPool() throws IOException {
-        Main.NavigateToNewPage("user-pool.fxml");
+        Main.NavigateToNewPage("user-pool");
     }
 }

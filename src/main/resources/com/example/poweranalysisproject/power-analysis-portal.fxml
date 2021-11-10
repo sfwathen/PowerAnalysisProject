@@ -6,14 +6,28 @@
 
 <?import javafx.scene.control.Button?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.poweranalysisproject.PowerAnalysisPortalController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TitledPane?>
 
-    <Label fx:id="currentStatusText" text="No Current Power Analysis Running"/>
-    <Button text="User Pool" onAction="#goToUserPool"/>
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.PowerAnalysisPortalController" prefHeight="400" prefWidth="600">
 
+    <ToolBar prefHeight="40.0" prefWidth="600.0">
+        <items>
+            <Button mnemonicParsing="false" text="Home" />
+            <Button mnemonicParsing="false" text="Default Settings" />
+            <Button mnemonicParsing="false" text="View Reports" />
+            <Button mnemonicParsing="false" text="Log Out" />
+        </items>
+    </ToolBar>
+
+    <VBox alignment="CENTER" spacing="20.0" >
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <Label fx:id="currentStatusText" text="No Current Power Analysis Running"/>
+        <Button text="User Pool" onAction="#goToUserPool"/>
+    </VBox>
 </VBox>
 

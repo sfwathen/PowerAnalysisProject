@@ -20,14 +20,17 @@ public class Main extends Application {
         Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setTitle("HomePage!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
     public static void NavigateToNewPage(String pageName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
+        String name = pageName.replace('-', ' ');
         Scene scene = new Scene(fxmlLoader.load(), width, height);
-        stage.setTitle(pageName + "Change");
+        stage.setTitle(name);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
