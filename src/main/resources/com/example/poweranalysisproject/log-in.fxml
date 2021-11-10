@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.ToolBar?>
-<VBox alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.PowerAnalysisPortalController" prefHeight="400" prefWidth="600">
+<VBox alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.LoginController" prefHeight="400" prefWidth="600">
    <ToolBar prefHeight="40.0" prefWidth="600.0">
       <items>
          <Button mnemonicParsing="false" text="Home" />
@@ -46,7 +46,7 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Label>
-      <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Log In">
+      <Button onAction="#goToHomePage" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Log In">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
