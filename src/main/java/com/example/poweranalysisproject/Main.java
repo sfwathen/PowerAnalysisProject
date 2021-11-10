@@ -25,7 +25,7 @@ public class Main extends Application {
     }
 
     public static void NavigateToNewPage(String pageName) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + "user-pool.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = pageName.replace('-', ' ');
         Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setTitle(name);
