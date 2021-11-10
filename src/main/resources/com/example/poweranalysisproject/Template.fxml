@@ -14,7 +14,7 @@
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
-            <Button mnemonicParsing="false" text="Home" />
+            <Button mnemonicParsing="false" text="Home" onAction="#goHome"/>
             <Button mnemonicParsing="false" text="Default Settings" />
             <Button mnemonicParsing="false" text="View Reports" />
             <Button mnemonicParsing="false" text="Log Out" />
