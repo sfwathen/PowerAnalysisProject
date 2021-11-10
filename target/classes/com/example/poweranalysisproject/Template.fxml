@@ -6,13 +6,15 @@
 
 <?import javafx.scene.control.Button?>
 
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TitledPane?>
 
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.AnalysisSettingsController" prefHeight="400" prefWidth="600">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.PowerAnalysisPortalController" prefHeight="400" prefWidth="600">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
-            <Button mnemonicParsing="false" text="Home" />
+            <Button mnemonicParsing="false" text="Home" onAction="#goHome"/>
             <Button mnemonicParsing="false" text="Default Settings" />
             <Button mnemonicParsing="false" text="View Reports" />
             <Button mnemonicParsing="false" text="Log Out" />
@@ -28,3 +30,4 @@
         <Button text="User Pool" onAction="#goToUserPool"/>
     </VBox>
 </VBox>
+

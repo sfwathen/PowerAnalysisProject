@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class HomePageController {
+public class HomePageController extends Controller{
 
     @FXML
     protected void onPowerAnalysisPortalClick() throws IOException {

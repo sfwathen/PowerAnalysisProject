@@ -16,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("power-analysis-portal.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("profile.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), width, height);
         stage.setTitle("HomePage!");
         stage.setScene(scene);

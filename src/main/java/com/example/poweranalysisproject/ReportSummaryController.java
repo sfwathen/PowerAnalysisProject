@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class PowerAnalysisPortalController extends Controller{
+public class ReportSummaryController {
     @FXML
     protected void goToUserPool() throws IOException {
         Main.NavigateToNewPage("user-pool");
