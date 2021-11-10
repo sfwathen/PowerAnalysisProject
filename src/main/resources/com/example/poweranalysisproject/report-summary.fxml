@@ -112,7 +112,7 @@
                   <children>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Memory" textAlignment="CENTER" wrapText="true" />
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="X^0" />
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="123" />
                   </children>
                   <VBox.margin>
                      <Insets />
@@ -122,14 +122,14 @@
                   <children>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="CPU" textAlignment="CENTER" wrapText="true" />
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="X^0" />
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="456" />
                   </children>
                </HBox>
                <HBox prefHeight="30.0" prefWidth="145.0">
                   <children>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Disk" textAlignment="CENTER" wrapText="true" />
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="X^0" />
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="789" />
                   </children>
                </HBox>
             </children>
