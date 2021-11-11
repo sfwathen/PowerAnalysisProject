@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.ReportSummaryController">
+
+    <ToolBar prefHeight="40.0" prefWidth="600.0">
+        <items>
+            <Button mnemonicParsing="false" text="Home" />
+            <Button mnemonicParsing="false" text="Default Settings" />
+            <Button mnemonicParsing="false" text="View Reports" />
+            <Button mnemonicParsing="false" text="Log Out" />
+        </items>
+    </ToolBar>
+
+    <VBox alignment="CENTER" prefHeight="70.0" prefWidth="600.0" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+
+        <Label fx:id="currentStatusText" text="Report View">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+    </VBox>
+   <HBox prefHeight="270.0" prefWidth="600.0">
+      <children>
+         <TableView prefWidth="420.0">
+           <columns>
+             <TableColumn prefWidth="80.79998779296875" text="Name" />
+             <TableColumn prefWidth="97.59998321533203" text="Memory" />
+               <TableColumn text="CPU" />
+               <TableColumn text="Disk" />
+               <TableColumn prefWidth="80.80001831054688" text="Flagged" />
+           </columns>
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" />
+            </HBox.margin>
+         </TableView>
+         <VBox prefHeight="185.0" prefWidth="145.0">
+            <children>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label prefHeight="30.0" prefWidth="70.0" text="Report ID">
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding>
+                     </Label>
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="AB12133" textAlignment="RIGHT" />
+                  </children>
+               </HBox>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label prefHeight="30.0" prefWidth="70.0" text="Started By">
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding>
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </Label>
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="PrivUser1" textAlignment="RIGHT" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label prefHeight="30.0" prefWidth="70.0" text="Start Time">
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding>
+                     </Label>
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label prefHeight="30.0" prefWidth="70.0" text="End Time">
+                        <padding>
+                           <Insets left="5.0" />
+                        </padding>
+                     </Label>
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
+               </HBox>
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="145.0" text="Thresholds:" textAlignment="CENTER">
+                  <font>
+                     <Font size="14.0" />
+                  </font>
+               </Label>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Memory" textAlignment="CENTER" wrapText="true" />
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="123" />
+                  </children>
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+               </HBox>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="CPU" textAlignment="CENTER" wrapText="true" />
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="456" />
+                  </children>
+               </HBox>
+               <HBox prefHeight="30.0" prefWidth="145.0">
+                  <children>
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Disk" textAlignment="CENTER" wrapText="true" />
+                     <Label prefHeight="30.0" prefWidth="5.0" text=":" />
+                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="789" />
+                  </children>
+               </HBox>
+            </children>
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin>
+         </VBox>
+      </children>
+   </HBox>
+</VBox>
