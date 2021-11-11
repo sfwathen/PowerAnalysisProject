@@ -9,4 +9,9 @@ public class PowerAnalysisPortalController extends Controller{
     protected void goToUserPool() throws IOException {
         Main.NavigateToNewPage("user-pool");
     }
+
+    @FXML
+    protected void goToActivePowerAnalysis() throws IOException {
+        Main.NavigateToNewPage("power-analysis-active");
+    }
 }

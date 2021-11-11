@@ -11,4 +11,9 @@ public class Controller {
         Main.NavigateToNewPage("power-analysis-portal");
     }
 
+    @FXML
+    protected void viewReports() throws IOException {
+        Main.NavigateToNewPage("reports-viewer");
+    }
+
 }

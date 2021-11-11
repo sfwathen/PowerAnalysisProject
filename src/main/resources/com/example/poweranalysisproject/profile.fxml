@@ -16,7 +16,7 @@
       <items>
          <Button onAction="#goToHomePage" mnemonicParsing="false" text="Home" />
          <Button mnemonicParsing="false" text="Default Settings" />
-         <Button mnemonicParsing="false" text="View Reports" />
+         <Button mnemonicParsing="false" text="View Reports" onAction="#viewReports"/>
          <Button onAction="#goToLoginPage" mnemonicParsing="false" text="Log Out" />
       </items>
    </ToolBar>

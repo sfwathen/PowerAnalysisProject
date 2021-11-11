@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AnalysisSettingsController {
+public class AnalysisSettingsController extends Controller{
     @FXML
     private TextField CPUTreshold;
 
