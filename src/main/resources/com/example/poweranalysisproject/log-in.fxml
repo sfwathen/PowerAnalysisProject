@@ -9,14 +9,6 @@
 
 <?import javafx.scene.control.ToolBar?>
 <VBox alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.LoginController" prefHeight="400" prefWidth="600">
-   <ToolBar prefHeight="40.0" prefWidth="600.0">
-      <items>
-         <Button mnemonicParsing="false" text="Home" />
-         <Button mnemonicParsing="false" text="Default Settings" />
-         <Button mnemonicParsing="false" text="View Reports" />
-         <Button mnemonicParsing="false" text="Log Out" />
-      </items>
-   </ToolBar>
 
 <!--   Page Contents-->
    <VBox alignment="CENTER" prefHeight="250.0" maxHeight="250.0" prefWidth="300.0" maxWidth="300.0" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
