@@ -8,6 +8,6 @@ public class HomePageController extends Controller{
 
     @FXML
     protected void onPowerAnalysisPortalClick() throws IOException {
-        Main.NavigateToNewPage("power-analysis-portal.fxml");
+        Main.navigateToNewPage("power-analysis-portal.fxml");
     }
 }

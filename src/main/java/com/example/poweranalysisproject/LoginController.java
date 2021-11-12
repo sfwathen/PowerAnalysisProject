@@ -7,6 +7,6 @@ import java.io.IOException;
 public class LoginController extends Controller {
     @FXML
     protected void goToHomePage() throws IOException {
-        Main.NavigateToNewPage("power-analysis-portal");
+        Main.navigateToNewPage("power-analysis-portal");
     }
 }

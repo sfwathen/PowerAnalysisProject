@@ -1,4 +1,4 @@
 package com.example.poweranalysisproject;
 
-public class UserPoolController {
+public class UserPoolController extends Controller {
 }

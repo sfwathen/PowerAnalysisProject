@@ -7,11 +7,11 @@ import java.io.IOException;
 public class PowerAnalysisPortalController extends Controller{
     @FXML
     protected void goToUserPool() throws IOException {
-        Main.NavigateToNewPage("user-pool");
+        Main.navigateToNewPage("user-pool");
     }
 
     @FXML
     protected void goToActivePowerAnalysis() throws IOException {
-        Main.NavigateToNewPage("power-analysis-active");
+        Main.navigateToNewPage("power-analysis-active");
     }
 }

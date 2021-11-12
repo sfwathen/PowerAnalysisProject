@@ -1,11 +1,9 @@
 package com.example.poweranalysisproject;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -32,7 +30,7 @@ public class AnalysisSettingsController extends Controller{
     protected void clickButtonScheduleAnalysis() throws IOException {
         // Before it navigates, do error checking for the Dates, etc...
         // Set
-        Main.NavigateToNewPage("power-analysis-portal");
+        Main.navigateToNewPage("power-analysis-portal");
     }
 
 

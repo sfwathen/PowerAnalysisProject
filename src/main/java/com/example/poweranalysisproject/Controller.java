@@ -8,12 +8,12 @@ public class Controller {
 
     @FXML
     protected void goHome() throws IOException {
-        Main.NavigateToNewPage("power-analysis-portal");
+        Main.navigateToNewPage("power-analysis-portal");
     }
 
     @FXML
     protected void viewReports() throws IOException {
-        Main.NavigateToNewPage("reports-viewer");
+        Main.navigateToNewPage("reports-viewer");
     }
 
 }

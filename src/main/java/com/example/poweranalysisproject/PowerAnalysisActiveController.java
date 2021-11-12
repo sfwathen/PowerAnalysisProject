@@ -7,6 +7,6 @@ import java.io.IOException;
 public class PowerAnalysisActiveController extends Controller{
     @FXML
     protected void goHome()  throws IOException{
-        Main.NavigateToNewPage("power-analysis-active");
+        Main.navigateToNewPage("power-analysis-active");
     }
 }
