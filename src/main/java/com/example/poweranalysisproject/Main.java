@@ -9,26 +9,24 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    static final int Height = 400;
-    static final int Width = 600;
+    static final int HEIGHT = 400;
+    static final int WIDTH = 600;
 
-    static private Stage stage;
+    private static Stage stage;
     @Override
     public void start(Stage stage) throws IOException {
-        this.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("log-in.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), Width, Height);
-        stage.setTitle("HomePage!");
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.show();
+        startApp(stage);
+    }
 
+    public static void startApp(Stage stage) throws IOException {
+        Main.stage = stage;
+        navigateToNewPage("log-in");
     }
 
     public static void navigateToNewPage(String pageName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = pageName.replace('-', ' ');
-        Scene scene = new Scene(fxmlLoader.load(), Width, Height);
+        Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
         stage.setTitle(name);
         stage.setScene(scene);
         stage.setResizable(false);
