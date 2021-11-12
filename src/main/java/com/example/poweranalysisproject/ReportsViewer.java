@@ -10,10 +10,10 @@ import java.io.IOException;
 public class ReportsViewer extends Controller{
 
     @FXML
-    private ScrollBar ViewReportsScrollBar;
+    private ScrollBar viewReportsScrollBar;
 
     @FXML
-    private TableView<?> ViewReportsTable;
+    private TableView<?> viewReportsTable;
 
     @FXML
     void tableMouseClicked(MouseEvent event) throws IOException {

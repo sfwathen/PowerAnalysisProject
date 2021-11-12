@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class AnalysisSettingsController extends Controller{
     @FXML
-    private TextField CPUTreshold;
+    private TextField cpuTreshold;
 
     @FXML
-    private TextField DiskTreshold;
+    private TextField diskTreshold;
 
     @FXML
-    private TextField MemoryTreshold;
+    private TextField memoryTreshold;
 
     @FXML
     private DatePicker textFieldEndDate;
@@ -24,7 +24,7 @@ public class AnalysisSettingsController extends Controller{
     private DatePicker textFieldStartDate;
 
     @FXML
-    private CheckBox CurrTimeCheckBox;
+    private CheckBox currTimeCheckBox;
 
     @FXML
     protected void clickButtonScheduleAnalysis() throws IOException {
