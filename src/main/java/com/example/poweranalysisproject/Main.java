@@ -25,12 +25,26 @@ public class Main extends Application {
 
     public static void navigateToNewPage(String pageName) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
-        String name = pageName.replace('-', ' ');
+        String name = toUpperCase(pageName.replace('-', ' '));
+
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
         stage.setTitle(name);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+    }
+
+    public static String toUpperCase(String name)
+    {
+        String[] words = name.split(" ");
+        String result = "";
+
+        for (int i = 0; i < words.length; i++)
+        {
+            result += words[i].substring(0,1).toUpperCase() + words[i].substring(1) + " ";
+        }
+
+        return result.substring(0, result.length()-1);
     }
 
     public static void main(String[] args) {
