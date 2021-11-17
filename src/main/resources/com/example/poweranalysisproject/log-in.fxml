@@ -7,13 +7,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.ToolBar?>
-<VBox alignment="TOP_CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.poweranalysisproject.LoginController" prefHeight="400" prefWidth="600">
+<VBox alignment="TOP_CENTER" prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.LoginController">
 
 <!--   Page Contents-->
-   <VBox alignment="CENTER" prefHeight="250.0" maxHeight="250.0" prefWidth="300.0" maxWidth="300.0" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox alignment="CENTER" maxHeight="250.0" maxWidth="300.0" prefHeight="250.0" prefWidth="300.0" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
       <VBox.margin>
-         <Insets top="50.0" />
+         <Insets top="75.0" />
       </VBox.margin>
       <Label alignment="CENTER" contentDisplay="TEXT_ONLY" text="Log In" textAlignment="CENTER">
          <font>
@@ -38,12 +37,10 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </Label>
-      <Button onAction="#goToHomePage" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Log In">
+      <Button mnemonicParsing="false" onAction="#goToHomePage" prefHeight="26.0" prefWidth="126.0" text="Log In">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
       </Button>
    </VBox>
 </VBox>
-
-
