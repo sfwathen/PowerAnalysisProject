@@ -1,0 +1,15 @@
+#home-btn {
+    -fx-graphic: url('./imgs/home.png')
+}
+
+#settings-btn {
+    -fx-graphic: url('./imgs/settings.png')
+}
+
+#reports-btn {
+    -fx-graphic: url("./imgs/list.png")
+}
+
+#log-out-btn {
+    -fx-graphic: url("./imgs/log-out.png")
+}

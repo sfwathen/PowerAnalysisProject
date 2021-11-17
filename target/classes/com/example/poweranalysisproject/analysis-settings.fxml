@@ -11,14 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import java.net.URL?>
 <VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.AnalysisSettingsController">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
-            <Button mnemonicParsing="false" text="Home" onAction="#goHome"/>
-            <Button mnemonicParsing="false" text="Default Settings" />
-            <Button mnemonicParsing="false" text="View Reports" onAction="#viewReports" />
-            <Button mnemonicParsing="false" text="Log Out" />
+            <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />
+            <Button id="settings-btn" mnemonicParsing="false" text="Default Settings" />
+            <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" text="View Reports" />
+            <Button id="log-out-btn" mnemonicParsing="false" text="Log Out" />
         </items>
     </ToolBar>
 
@@ -45,4 +46,7 @@
          </Pane>
       </children>
     </VBox>
+    <stylesheets>
+        <URL value="@navBar.css" />
+    </stylesheets>
 </VBox>

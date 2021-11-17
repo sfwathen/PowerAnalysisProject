@@ -9,14 +9,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import java.net.URL?>
 <VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.ReportsViewer">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
-            <Button mnemonicParsing="false" onAction="#goHome" text="Home" />
-            <Button mnemonicParsing="false" text="Default Settings" />
-            <Button mnemonicParsing="false" onAction="#viewReports" text="View Reports" />
-            <Button mnemonicParsing="false" text="Log Out" />
+            <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />
+            <Button id="settings-btn" mnemonicParsing="false" text="Default Settings" />
+            <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" text="View Reports" />
+            <Button id="log-out-btn" mnemonicParsing="false" text="Log Out" />
         </items>
     </ToolBar>
 
@@ -41,4 +42,7 @@
       </children>
 
     </VBox>
+    <stylesheets>
+        <URL value="@navBar.css" />
+    </stylesheets>
 </VBox>
