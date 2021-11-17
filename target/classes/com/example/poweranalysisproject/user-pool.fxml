@@ -8,7 +8,7 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.PowerAnalysisPortalController">
+<VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.UserPoolController">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
@@ -27,13 +27,13 @@
         <Label fx:id="currentStatusText" text="User Pool" />
 
     </VBox>
-   <TableView prefHeight="200.0" prefWidth="200.0">
+   <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0">
      <columns>
-       <TableColumn prefWidth="75.0" text="Name" />
-       <TableColumn prefWidth="75.0" text="Building" />
-         <TableColumn prefWidth="75.0" text="Room" />
-         <TableColumn prefWidth="75.0" text="Department" />
-         <TableColumn prefWidth="75.0" text="Selected" />
+       <TableColumn fx:id="Name" prefWidth="167.0" text="Name" />
+       <TableColumn fx:id="Building" prefWidth="102.0" text="Building" />
+         <TableColumn fx:id="Room" prefWidth="98.0" text="Room" />
+         <TableColumn fx:id="Department" prefWidth="141.0" text="Department" />
+         <TableColumn fx:id="Selected" prefWidth="91.0" text="Selected" />
      </columns>
    </TableView>
 </VBox>
