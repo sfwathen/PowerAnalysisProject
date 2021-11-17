@@ -30,13 +30,13 @@
             <children>
                <TableView fx:id="ViewReportsTable" layoutX="-23.0" layoutY="-3.0" onMouseClicked="#tableMouseClicked" prefHeight="330.0" prefWidth="603.0">
                  <columns>
-                   <TableColumn prefWidth="153.0430088043213" text="Report ID" />
-                   <TableColumn prefWidth="150.00003051757812" text="Start Date" />
-                     <TableColumn prefWidth="121.0" text="End Date" />
-                     <TableColumn prefWidth="163.47003173828125" text="Supervisor" />
+                   <TableColumn fx:id="reportIDColumn" prefWidth="153.0430088043213" text="Report ID" />
+                   <TableColumn fx:id="startDateColumn" prefWidth="150.00003051757812" text="Start Date" />
+                     <TableColumn fx:id="endDateColumn" prefWidth="121.0" text="End Date" />
+                     <TableColumn fx:id="supervisorColumn" prefWidth="161.9000244140625" text="Supervisor" />
                  </columns>
                </TableView>
-               <ScrollBar fx:id="ViewReportsScrollBar" layoutX="564.0" layoutY="97.0" orientation="VERTICAL" prefHeight="173.0" prefWidth="16.0" />
+               <ScrollBar fx:id="ViewReportsScrollBar" layoutX="564.0" layoutY="24.0" orientation="VERTICAL" prefHeight="302.0" prefWidth="16.0" />
             </children>
          </Pane>
       </children>
