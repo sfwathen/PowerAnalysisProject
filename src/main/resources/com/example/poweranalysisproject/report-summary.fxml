@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import java.net.URL?>
-<VBox prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.ReportSummaryController">
+<VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.ReportSummaryController">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
@@ -34,13 +29,13 @@
     </VBox>
    <HBox prefHeight="270.0" prefWidth="600.0">
       <children>
-         <TableView prefWidth="420.0">
+         <TableView fx:id="reportTable" prefWidth="420.0">
            <columns>
-             <TableColumn prefWidth="80.79998779296875" text="Name" />
-             <TableColumn prefWidth="97.59998321533203" text="Memory" />
-               <TableColumn text="CPU" />
-               <TableColumn text="Disk" />
-               <TableColumn prefWidth="80.80001831054688" text="Flagged" />
+             <TableColumn fx:id="colName" prefWidth="80.79998779296875" text="Name" />
+             <TableColumn fx:id="colMemory" prefWidth="97.59998321533203" text="Memory" />
+               <TableColumn fx:id="colCPU" text="CPU" />
+               <TableColumn fx:id="colDisk" text="Disk" />
+               <TableColumn fx:id="colFlagged" prefWidth="80.80001831054688" text="Flagged" />
            </columns>
             <HBox.margin>
                <Insets bottom="10.0" left="10.0" />
