@@ -2,11 +2,13 @@ package com.example.poweranalysisproject;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -40,4 +42,14 @@ public class UserPoolController extends Controller implements Initializable {
 
 
     );
+
+    @FXML
+    protected void continueOn() throws IOException {
+        Main.navigateToNewPage("analysis-settings");
+    }
+
+    @FXML
+    protected void goBack() throws IOException {
+        Main.navigateToNewPage("power-analysis-portal");
+    }
 }
