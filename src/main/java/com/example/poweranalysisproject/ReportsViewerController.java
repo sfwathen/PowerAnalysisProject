@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class ReportsViewer implements Initializable {
+public class ReportsViewerController implements Initializable {
 
     @FXML
     private ScrollBar ViewReportsScrollBar;
@@ -63,11 +63,6 @@ public class ReportsViewer implements Initializable {
             new Report("12-11-2021", "12-27-2021", "Matteo"),
             new Report( "10-10-2021", "10-30-2021", "Armstrong")
     );
-
-//    @FXML
-//    void tableMouseClicked(MouseEvent event) throws IOException {
-//        Main.navigateToNewPage("report-summary");
-//    }
 
     @FXML
     void handleRowClick(MouseEvent event) throws IOException {
