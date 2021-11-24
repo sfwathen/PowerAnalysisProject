@@ -33,7 +33,10 @@ public class AnalysisSettingsController extends Controller{
         Main.navigateToNewPage("power-analysis-portal");
     }
 
-
+    @FXML
+    protected void goToSettings() throws IOException {
+        Main.navigateToNewPage("default-settings");
+    }
 }
 
 

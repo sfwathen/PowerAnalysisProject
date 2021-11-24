@@ -40,6 +40,11 @@ public class ReportsViewer implements Initializable {
         Main.navigateToNewPage("power-analysis-portal");
     }
 
+    @FXML
+    protected void goToSettings() throws IOException {
+        Main.navigateToNewPage("default-settings");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         reportIDColumn.setCellValueFactory(new PropertyValueFactory<>("ReportID"));

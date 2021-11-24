@@ -52,4 +52,9 @@ public class UserPoolController extends Controller implements Initializable {
     protected void goBack() throws IOException {
         Main.navigateToNewPage("power-analysis-portal");
     }
+
+    @FXML
+    protected void goToSettings() throws IOException {
+        Main.navigateToNewPage("default-settings");
+    }
 }

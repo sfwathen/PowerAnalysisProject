@@ -25,6 +25,11 @@ public class ReportSummaryController extends Controller implements Initializable
         Main.navigateToNewPage("user-pool");
     }
 
+    @FXML
+    protected void goToSettings() throws IOException {
+        Main.navigateToNewPage("default-settings");
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colName.setCellValueFactory(new PropertyValueFactory<>("UserName"));
