@@ -18,4 +18,9 @@ public class PowerAnalysisActiveController extends Controller{
             e.printStackTrace();
         }
     }
+
+    @FXML
+    protected void goToSettings() throws IOException {
+        Main.navigateToNewPage("default-settings");
+    }
 }

@@ -1,10 +1,12 @@
 package com.example.poweranalysisproject;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class ProfileController extends Controller {
+public class DefaultSettingsController {
+
     @FXML
     protected void goToHomePage() throws IOException {
         Main.navigateToNewPage("power-analysis-portal");
@@ -13,6 +15,11 @@ public class ProfileController extends Controller {
     @FXML
     protected void goToLoginPage() throws IOException {
         Main.navigateToNewPage("log-in");
+    }
+
+    @FXML
+    protected void goToReportViewer() throws IOException {
+        Main.navigateToNewPage("reports-viewer");
     }
 
     @FXML
