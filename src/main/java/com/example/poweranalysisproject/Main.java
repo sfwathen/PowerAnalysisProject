@@ -14,8 +14,6 @@ public class Main extends Application {
 
 //    static Report currReport;
 
-    static UserProfile currUser;
-
     private static Stage stage;
 
     @Override
@@ -59,7 +57,7 @@ public class Main extends Application {
         String name = toUpperCase(pageName.replace('-', ' '));
 
         ///////
-        currUser = user;
+        ProjectStateSingleton.getInstance().setCurrUserProfile(user);
 
         ///////
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
