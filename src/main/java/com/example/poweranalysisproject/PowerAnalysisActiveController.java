@@ -60,15 +60,17 @@ public class PowerAnalysisActiveController extends Controller{
     private int totalMem = 0;
     private int totalDisk = 0;
 
+    private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
+
     @FXML
     private void initialize()
     {
-        if (ProjectStateSingleton.getInstance().getCurrUserProfile() == null)
+        if (singleton.getCurrUserProfile() == null)
         {
             //if default settings
         }
         else {
-            currentStatusText.setText("Power Analysis Active on " + Main.currUser.getName() + " computer");
+            currentStatusText.setText("Power Analysis Active on " + singleton.getCurrUserProfile().getName() + " computer");
         }
     }
 
