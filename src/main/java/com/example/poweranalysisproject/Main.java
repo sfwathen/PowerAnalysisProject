@@ -3,6 +3,7 @@ package com.example.poweranalysisproject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,13 +42,13 @@ public class Main extends Application {
     public static void navigateToNewPage(String pageName, Report newCurrReport) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = toUpperCase(pageName.replace('-', ' '));
-        ///////
-        currReport = newCurrReport;
-        ///////
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
         stage.setTitle(name);
         stage.setScene(scene);
         stage.setResizable(false);
+        currReport = newCurrReport;
+        ReportSummaryController  controller = fxmlLoader.getController();
+        controller.updateReportIDText();
         stage.show();
     }
 
