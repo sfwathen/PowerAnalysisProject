@@ -26,6 +26,24 @@ public class ReportSummaryController extends Controller implements Initializable
     private Label reportIDText;
 
     @FXML
+    private Label reportSupervisor;
+
+    @FXML
+    private Label reportStartTime;
+
+    @FXML
+    private Label reportEndTime;
+
+    @FXML
+    private Label reportMemoryTreshold;
+
+    @FXML
+    private Label reportCPUTreshold;
+
+    @FXML
+    private Label reportDiskTreshold;
+
+    @FXML
     protected void goToUserPool() throws IOException {
         Main.navigateToNewPage("user-pool");
     }
@@ -36,8 +54,16 @@ public class ReportSummaryController extends Controller implements Initializable
     }
 
 
-    public void updateReportIDText() {
-        reportIDText.setText(ProjectStateSingleton.getInstance().getCurrReport().getReportID());
+    public void updateReportSummaryMetrics() {
+        Report currReport = ProjectStateSingleton.getInstance().getCurrReport();
+
+        reportIDText.setText(currReport.getReportID());
+        reportSupervisor.setText(currReport.getReportSupervisor());
+        reportStartTime.setText(currReport.getReportStartDate());
+        reportEndTime.setText(currReport.getReportEndDate());
+        reportMemoryTreshold.setText(Double.toString(currReport.getMemoryTreshold()));
+        reportCPUTreshold.setText(Double.toString(currReport.getCpuTreshold()));
+        reportDiskTreshold.setText(Double.toString(currReport.getDiskTreshold()));
     }
 
     @Override

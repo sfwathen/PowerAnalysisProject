@@ -3,12 +3,9 @@ package com.example.poweranalysisproject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Main extends Application {
 
@@ -53,7 +50,7 @@ public class Main extends Application {
         stage.setResizable(false);
         ProjectStateSingleton.getInstance().setCurrReport(newCurrReport);
         ReportSummaryController  controller = fxmlLoader.getController();
-        controller.updateReportIDText();
+        controller.updateReportSummaryMetrics();
         stage.show();
     }
 
