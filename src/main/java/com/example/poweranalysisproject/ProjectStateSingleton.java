@@ -5,6 +5,7 @@ public class ProjectStateSingleton {
 
     // Ricardos
     private Report currReport;
+    //
 
     private ProjectStateSingleton() {}
 

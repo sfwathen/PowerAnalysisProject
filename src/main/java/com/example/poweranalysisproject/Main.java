@@ -42,7 +42,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    ////// Trying out overloading the navNewPage method
+    // Used to transition to new page with a newCurrReport. ReportsViewer-->ReportSummary
     public static void navigateToNewPage(String pageName, Report newCurrReport) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = toUpperCase(pageName.replace('-', ' '));
