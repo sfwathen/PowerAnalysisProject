@@ -3,19 +3,16 @@ package com.example.poweranalysisproject;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Main extends Application {
 
     static final int HEIGHT = 400;
     static final int WIDTH = 600;
 
-    static Report currReport;
+//    static Report currReport;
 
     private static Stage stage;
 
@@ -26,7 +23,7 @@ public class Main extends Application {
 
     public static void startApp(Stage stage) throws IOException {
         Main.stage = stage;
-        currReport = null;
+//        currReport = null;
         navigateToNewPage("log-in");
     }
 
@@ -41,7 +38,7 @@ public class Main extends Application {
         stage.show();
     }
 
-    ////// Trying out overloading the navNewPage method
+    // Used to transition to new page with a newCurrReport. ReportsViewer-->ReportSummary
     public static void navigateToNewPage(String pageName, Report newCurrReport) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = toUpperCase(pageName.replace('-', ' '));
@@ -49,9 +46,9 @@ public class Main extends Application {
         stage.setTitle(name);
         stage.setScene(scene);
         stage.setResizable(false);
-        currReport = newCurrReport;
+        ProjectStateSingleton.getInstance().setCurrReport(newCurrReport);
         ReportSummaryController  controller = fxmlLoader.getController();
-        controller.updateReportIDText();
+        controller.updateReportSummaryMetrics();
         stage.show();
     }
 

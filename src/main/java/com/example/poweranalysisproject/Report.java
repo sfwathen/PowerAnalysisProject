@@ -16,9 +16,9 @@ public class Report {
     private SimpleStringProperty reportEndDate;
     private SimpleStringProperty reportSupervisor;
 
-    private SimpleDoubleProperty memoryTreshold;
-    private SimpleDoubleProperty cpuTreshold;
-    private SimpleDoubleProperty diskTreshold;
+    private final SimpleDoubleProperty memoryTreshold;
+    private final SimpleDoubleProperty cpuTreshold;
+    private final SimpleDoubleProperty diskTreshold;
 
     private SimpleBooleanProperty flagged;
 

@@ -65,7 +65,7 @@
                         </HBox.margin>
                      </Label>
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="PrivUser1" textAlignment="RIGHT" />
+                     <Label fx:id="reportSupervisor" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" textAlignment="RIGHT" />
                   </children>
                   <VBox.margin>
                      <Insets top="5.0" />
@@ -79,7 +79,7 @@
                         </padding>
                      </Label>
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label fx:id="stText" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
+                     <Label fx:id="reportStartTime" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" textAlignment="RIGHT" />
                   </children>
                   <VBox.margin>
                      <Insets top="5.0" />
@@ -93,7 +93,7 @@
                         </padding>
                      </Label>
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label fx:id="stst" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
+                     <Label fx:id="reportEndTime" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" textAlignment="RIGHT" />
                   </children>
                   <VBox.margin>
                      <Insets top="5.0" />
@@ -108,7 +108,7 @@
                   <children>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Memory" textAlignment="CENTER" wrapText="true" />
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="123" />
+                     <Label fx:id="reportMemoryTreshold" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" />
                   </children>
                   <VBox.margin>
                      <Insets />
@@ -118,14 +118,14 @@
                   <children>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="CPU" textAlignment="CENTER" wrapText="true" />
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="456" />
+                     <Label fx:id="reportCPUTreshold" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" />
                   </children>
                </HBox>
                <HBox prefHeight="30.0" prefWidth="145.0">
                   <children>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="Disk" textAlignment="CENTER" wrapText="true" />
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="70.0" text="789" />
+                     <Label fx:id="reportDiskTreshold" alignment="CENTER" prefHeight="30.0" prefWidth="70.0" />
                   </children>
                </HBox>
             </children>

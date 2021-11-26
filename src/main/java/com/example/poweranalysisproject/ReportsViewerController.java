@@ -56,19 +56,18 @@ public class ReportsViewerController implements Initializable {
     }
 
     private ObservableList<Report> reportsList = FXCollections.observableArrayList(
-            new Report( "10-10-2021", "10-11-2021", "Matteo"),
-            new Report("10-12-2021", "10-13-2021", "Matteo"),
-            new Report( "09-09-2021", "09-11-2021", "Davide"),
-            new Report("09-23-2021", "09-27-2021", "Matteo"),
-            new Report("12-11-2021", "12-27-2021", "Matteo"),
-            new Report( "10-10-2021", "10-30-2021", "Armstrong")
+            new Report( "10-10-21", "10-11-21", "Matteo"),
+            new Report("10-12-21", "10-13-21", "Matteo"),
+            new Report( "09-09-21", "09-11-21", "Davide"),
+            new Report("09-23-21", "09-27-21", "Matteo"),
+            new Report("12-11-21", "12-27-21", "Matteo"),
+            new Report( "10-10-21", "10-30-21", "Armstrong")
     );
 
     @FXML
     void handleRowClick(MouseEvent event) throws IOException {
         Report rowReport = ViewReportsTable.getSelectionModel().getSelectedItem();
         if(event.getClickCount() == 2 && rowReport != null){
-            System.out.println(rowReport.getReportID());
             Main.navigateToNewPage("report-summary", rowReport);
         }
 
