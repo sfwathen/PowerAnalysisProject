@@ -14,6 +14,7 @@ public class Main extends Application {
 
     static final int HEIGHT = 400;
     static final int WIDTH = 600;
+
     static Report currReport;
 
     static UserProfile currUser;

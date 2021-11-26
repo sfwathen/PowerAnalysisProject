@@ -46,6 +46,7 @@ public class AnalysisSettingsController extends Controller{
     @FXML
     protected void goToUserPool() throws IOException {
 
+
         Main.navigateToNewPage("user-pool");
     }
 
