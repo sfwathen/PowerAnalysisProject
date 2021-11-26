@@ -61,7 +61,7 @@ public class UserPoolController extends Controller implements Initializable {
     }
 
     @FXML
-    void handleRowClick(MouseEvent event) throws IOException {
+    void handleRowClick(MouseEvent event) throws IOException, InterruptedException {
         UserProfile user = table.getSelectionModel().getSelectedItem();
         if (event.getClickCount() == 2 && user != null) {
             System.out.println(user.getName());

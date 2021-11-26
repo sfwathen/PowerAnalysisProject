@@ -6,6 +6,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main extends Application {
 
@@ -53,19 +55,33 @@ public class Main extends Application {
         stage.show();
     }
 
-    public static void navigateToNewPage(String pageName, UserProfile user) throws IOException {
+    public static void navigateToNewPage(String pageName, UserProfile user) throws IOException, InterruptedException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = toUpperCase(pageName.replace('-', ' '));
-        //PowerAnalysisActiveController controller = new PowerAnalysisActiveController(user);
 
         ///////
         currUser = user;
+
         ///////
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
         stage.setTitle(name);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
+
+        PowerAnalysisActiveController controller = fxmlLoader.getController();
+        controller.updateData("start");
+
+        stage.show();
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                controller.updateData(Math.random() + "");
+            }
+        }, 0,1000);
+
     }
 
     public static String toUpperCase(String name)

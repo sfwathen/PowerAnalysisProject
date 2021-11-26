@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
-<VBox prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.PowerAnalysisActiveController">
+<VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.PowerAnalysisActiveController">
 
    <ToolBar prefHeight="40.0" prefWidth="600.0">
       <items>
@@ -38,8 +36,8 @@
             <children>
                <HBox prefHeight="30.0" prefWidth="200.0">
                   <children>
-                     <Label fx:id="startTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="Start time:" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="End Time: DD HH:MM:SS" />
+                     <Label fx:id="startTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" />
+                     <Label fx:id="activeTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="Active Time" />
                   </children>
                </HBox>
                <HBox prefHeight="170.0" prefWidth="400.0">
@@ -55,7 +53,7 @@
                                     </padding>
                                  </Label>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="999.999" />
+                                 <Label fx:id="highMemText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="999.999" />
                               </children>
                            </HBox>
                            <HBox prefHeight="30.0" prefWidth="200.0">
@@ -66,7 +64,7 @@
                                     </padding>
                                  </Label>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="999.999" />
+                                 <Label fx:id="highCPUText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="999.999" />
                               </children>
                            </HBox>
                            <HBox prefHeight="30.0" prefWidth="200.0">
@@ -77,14 +75,14 @@
                                     </padding>
                                  </Label>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="999.999" />
+                                 <Label fx:id="highDiskText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="999.999" />
                               </children>
                            </HBox>
                         </children>
                      </VBox>
                      <VBox prefHeight="170.0" prefWidth="200.0">
                         <children>
-                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Average System Usage Metrics:" />
+                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Current System Usage Metrics:" />
                            <HBox prefHeight="30.0" prefWidth="200.0">
                               <children>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Memory Usage">
@@ -93,7 +91,7 @@
                                     </padding>
                                  </Label>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="127.654" />
+                                 <Label fx:id="curMemText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="127.654" />
                               </children>
                            </HBox>
                            <HBox prefHeight="30.0" prefWidth="200.0">
@@ -104,7 +102,7 @@
                                     </padding>
                                  </Label>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="234.892" />
+                                 <Label fx:id="curCPUText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="234.892" />
                               </children>
                            </HBox>
                            <HBox prefHeight="30.0" prefWidth="200.0">
@@ -115,32 +113,19 @@
                                     </padding>
                                  </Label>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="547.748" />
+                                 <Label fx:id="curDiskText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="547.748" />
                               </children>
                            </HBox>
                         </children>
                      </VBox>
                   </children>
                </HBox>
-               <HBox prefHeight="90.0" prefWidth="400.0">
-                  <children>
-                     <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="End Power Analysis" onAction="#endAnalysis">
-                        <HBox.margin>
-                           <Insets bottom="10.0" left="10.0" right="10.0" top="26.0" />
-                        </HBox.margin>
-                     </Button>
-                     <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="210.0" text="Pause... Unless?">
-                        <HBox.margin>
-                           <Insets bottom="10.0" left="10.0" right="10.0" top="26.0" />
-                        </HBox.margin>
-                     </Button>
-                  </children>
-               </HBox>
+               <HBox prefHeight="90.0" prefWidth="400.0" />
             </children>
          </VBox>
          <VBox prefHeight="300.0" prefWidth="200.0">
             <children>
-               <Label alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="Time Remaining:  DD HH:MM:SS" />
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="200.0" />
                <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Power Thresholds:" />
                <HBox prefHeight="30.0" prefWidth="200.0">
                   <children>
@@ -150,7 +135,7 @@
                         </padding>
                      </Label>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
+                     <Label fx:id="threshMemText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
                   </children>
                </HBox>
                <HBox prefHeight="30.0" prefWidth="200.0">
@@ -161,7 +146,7 @@
                         </padding>
                      </Label>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
+                     <Label fx:id="threshCPUText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
                   </children>
                </HBox>
                <HBox prefHeight="30.0" prefWidth="200.0">
@@ -172,33 +157,11 @@
                         </padding>
                      </Label>
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
+                     <Label fx:id="threshDiskText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
                   </children>
                </HBox>
-               <HBox prefHeight="30.0" prefWidth="200.0">
-                  <children>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="User Pool">
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <MenuButton mnemonicParsing="false" prefHeight="30.0" prefWidth="97.0" text="Users">
-                       <items>
-                         <MenuItem mnemonicParsing="false" text="Davide" />
-                         <MenuItem mnemonicParsing="false" text="Matteo" />
-                       </items>
-                        <HBox.margin>
-                           <Insets left="3.0" right="3.0" />
-                        </HBox.margin>
-                     </MenuButton>
-                  </children>
-               </HBox>
-               <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" text="Edit Power Analysis Settings">
-                  <VBox.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />
-                  </VBox.margin>
-               </Button>
+               <HBox prefHeight="30.0" prefWidth="200.0" />
+               <Button mnemonicParsing="false" onAction="#endAnalysis" prefHeight="40.0" prefWidth="140.0" text="End Power Analysis" />
             </children>
          </VBox>
       </children>
