@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,16 +29,16 @@ public class UserPoolController extends Controller implements Initializable {
         Building.setCellValueFactory(new PropertyValueFactory<>("Building"));
         Room.setCellValueFactory(new PropertyValueFactory<>("Room"));
         Department.setCellValueFactory(new PropertyValueFactory<>("Department"));
-        Selected.setCellValueFactory(new PropertyValueFactory<>("Selected"));
+        //Selected.setCellValueFactory(new PropertyValueFactory<>("Selected"));
         table.setItems(observableList);
     }
 
     ObservableList<UserProfile> observableList = FXCollections.observableArrayList(
-               new UserProfile("Collin", "10A", "5", "CS", "Yes"),
-            new UserProfile("Noah", "10A", "5", "CS", "No"),
-            new UserProfile("Sam", "10A", "5", "CS", "Yes"),
-            new UserProfile("Ricardo", "10A", "5", "CS", "No"),
-            new UserProfile("Davide", "10A", "5", "CS", "Yes")
+               new UserProfile("Collin", "10A", "5", "CS"),
+            new UserProfile("Noah", "10A", "5", "CS"),
+            new UserProfile("Sam", "10A", "5", "CS"),
+            new UserProfile("Ricardo", "10A", "5", "CS"),
+            new UserProfile("Davide", "10A", "5", "CS")
 
 
 
@@ -57,5 +58,14 @@ public class UserPoolController extends Controller implements Initializable {
     @FXML
     protected void beginAnalysis() throws IOException {
         Main.navigateToNewPage("power-analysis-active");
+    }
+
+    @FXML
+    void handleRowClick(MouseEvent event) throws IOException {
+        UserProfile user = table.getSelectionModel().getSelectedItem();
+        if (event.getClickCount() == 2 && user != null) {
+            System.out.println(user.getName());
+            Main.navigateToNewPage("power-analysis-active", user);
+        }
     }
 }

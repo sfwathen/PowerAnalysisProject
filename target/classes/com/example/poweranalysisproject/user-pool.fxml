@@ -26,13 +26,12 @@
         </padding>
 
     </VBox>
-   <TableView fx:id="table" prefHeight="283.0" prefWidth="600.0">
+   <TableView fx:id="table" prefHeight="283.0" prefWidth="600.0" onMouseClicked="#handleRowClick">
      <columns>
        <TableColumn fx:id="Name" prefWidth="167.0" text="Name" />
        <TableColumn fx:id="Building" prefWidth="102.0" text="Building" />
          <TableColumn fx:id="Room" prefWidth="98.0" text="Room" />
          <TableColumn fx:id="Department" prefWidth="141.0" text="Department" />
-         <TableColumn fx:id="Selected" prefWidth="91.0" text="Selected" />
      </columns>
    </TableView>
    <HBox prefHeight="100.0" prefWidth="200.0">
@@ -42,7 +41,7 @@
                <Insets right="280.0" />
             </HBox.margin>
          </Button>
-         <Button fx:id="continueButton" mnemonicParsing="false" onAction="#continueOn" prefHeight="39.0" prefWidth="182.0" text="Continue" />
+         <Button fx:id="continueButton" mnemonicParsing="false" onAction="#beginAnalysis" prefHeight="39.0" prefWidth="182.0" text="Continue" />
       </children>
    </HBox>
     <stylesheets>

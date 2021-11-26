@@ -38,7 +38,7 @@
             <children>
                <HBox prefHeight="30.0" prefWidth="200.0">
                   <children>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="Start Time:  DD HH:MM:SS" />
+                     <Label fx:id="startTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="Start time:" />
                      <Label alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="End Time: DD HH:MM:SS" />
                   </children>
                </HBox>

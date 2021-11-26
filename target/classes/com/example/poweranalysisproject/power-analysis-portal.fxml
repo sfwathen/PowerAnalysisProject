@@ -40,7 +40,7 @@
                <font>
                   <Font size="24.0" />
                </font></Button>
-            <Button alignment="CENTER" onAction="#goToUserPool" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Set Up Custom Power Analysis" textAlignment="CENTER" wrapText="true">
+            <Button alignment="CENTER" onAction="#goToAnalysisSettings" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="Set Up Custom Power Analysis" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
                   <Insets left="100.0" />
                </HBox.margin>

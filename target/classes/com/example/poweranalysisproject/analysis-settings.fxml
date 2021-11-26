@@ -12,6 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import java.net.URL?>
+<?import javafx.scene.layout.HBox?>
 <VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.AnalysisSettingsController">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
@@ -46,6 +47,17 @@
          </Pane>
       </children>
     </VBox>
+    <HBox prefHeight="100.0" prefWidth="200.0">
+        <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="182.0" text="Back">
+                <HBox.margin>
+                    <Insets right="280.0" />
+                </HBox.margin>
+            </Button>
+            <Button fx:id="continueButton" mnemonicParsing="false" onAction="#goToUserPool" prefHeight="39.0" prefWidth="182.0" text="Continue" />
+        </children>
+    </HBox>
+
     <stylesheets>
         <URL value="@navBar.css" />
     </stylesheets>
