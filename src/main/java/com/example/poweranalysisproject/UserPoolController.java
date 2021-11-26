@@ -43,18 +43,19 @@ public class UserPoolController extends Controller implements Initializable {
 
     );
 
-    @FXML
-    protected void continueOn() throws IOException {
-        Main.navigateToNewPage("analysis-settings");
-    }
 
     @FXML
     protected void goBack() throws IOException {
-        Main.navigateToNewPage("power-analysis-portal");
+        Main.navigateToNewPage("analysis-settings");
     }
 
     @FXML
     protected void goToSettings() throws IOException {
         Main.navigateToNewPage("default-settings");
+    }
+
+    @FXML
+    protected void beginAnalysis() throws IOException {
+        Main.navigateToNewPage("power-analysis-active");
     }
 }

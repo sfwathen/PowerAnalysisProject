@@ -42,7 +42,7 @@
                <Insets right="280.0" />
             </HBox.margin>
          </Button>
-         <Button fx:id="continueButton" mnemonicParsing="false" onAction="#continueOn" prefHeight="39.0" prefWidth="182.0" text="Continue" />
+         <Button fx:id="continueButton" mnemonicParsing="false" onAction="#beginAnalysis" prefHeight="39.0" prefWidth="182.0" text="Continue" />
       </children>
    </HBox>
     <stylesheets>

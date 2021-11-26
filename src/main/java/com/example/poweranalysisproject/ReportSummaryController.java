@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class ReportSummaryController extends Controller implements Initializable {
     public TableView<ReportSummaryUser> reportTable;
     public TableColumn<ReportSummaryUser, String> colName;

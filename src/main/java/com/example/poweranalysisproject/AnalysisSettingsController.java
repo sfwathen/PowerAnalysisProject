@@ -37,6 +37,18 @@ public class AnalysisSettingsController extends Controller{
     protected void goToSettings() throws IOException {
         Main.navigateToNewPage("default-settings");
     }
+
+    @FXML
+    protected void goBack() throws IOException {
+        Main.navigateToNewPage("power-analysis-portal");
+    }
+
+    @FXML
+    protected void goToUserPool() throws IOException {
+        Main.navigateToNewPage("user-pool");
+    }
+
+
 }
 
 

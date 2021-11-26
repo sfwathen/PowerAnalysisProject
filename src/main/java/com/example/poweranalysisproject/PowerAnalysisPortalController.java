@@ -5,9 +5,10 @@ import javafx.fxml.FXML;
 import java.io.IOException;
 
 public class PowerAnalysisPortalController extends Controller{
+
     @FXML
-    protected void goToUserPool() throws IOException {
-        Main.navigateToNewPage("user-pool");
+    protected void goToAnalysisSettings() throws IOException {
+        Main.navigateToNewPage("analysis-settings");
     }
 
     @FXML
