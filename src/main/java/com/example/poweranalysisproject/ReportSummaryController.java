@@ -37,7 +37,7 @@ public class ReportSummaryController extends Controller implements Initializable
 
 
     public void updateReportIDText() {
-        reportIDText.setText(Main.currReport.getReportID());
+        reportIDText.setText(ProjectStateSingleton.getInstance().getCurrReport().getReportID());
     }
 
     @Override

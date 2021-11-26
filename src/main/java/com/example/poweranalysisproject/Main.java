@@ -15,7 +15,7 @@ public class Main extends Application {
     static final int HEIGHT = 400;
     static final int WIDTH = 600;
 
-    static Report currReport;
+//    static Report currReport;
 
     static UserProfile currUser;
 
@@ -28,7 +28,7 @@ public class Main extends Application {
 
     public static void startApp(Stage stage) throws IOException {
         Main.stage = stage;
-        currReport = null;
+//        currReport = null;
         navigateToNewPage("log-in");
     }
 
@@ -51,7 +51,7 @@ public class Main extends Application {
         stage.setTitle(name);
         stage.setScene(scene);
         stage.setResizable(false);
-        currReport = newCurrReport;
+        ProjectStateSingleton.getInstance().setCurrReport(newCurrReport);
         ReportSummaryController  controller = fxmlLoader.getController();
         controller.updateReportIDText();
         stage.show();

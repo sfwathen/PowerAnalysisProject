@@ -15,6 +15,14 @@ public class ProjectStateSingleton {
         return psSingleton;
     }
 
+    public Report getCurrReport() {
+        return currReport;
+    }
+
+    public void setCurrReport(Report newCurrReport) {
+        currReport = newCurrReport;
+    }
+
     public void setCurrUserProfile(UserProfile user)
     {
         currUserProfile = user;
