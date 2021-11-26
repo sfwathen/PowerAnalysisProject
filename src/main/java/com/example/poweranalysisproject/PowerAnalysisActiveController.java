@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class PowerAnalysisActiveController extends Controller{
 
@@ -61,7 +63,13 @@ public class PowerAnalysisActiveController extends Controller{
     @FXML
     private void initialize()
     {
-        currentStatusText.setText("Power Analysis Active on " + Main.currUser.getName() + " computer");
+        if (Main.currUser == null)
+        {
+            //if default settings
+        }
+        else {
+            currentStatusText.setText("Power Analysis Active on " + Main.currUser.getName() + " computer");
+        }
     }
 
     @FXML
@@ -133,6 +141,13 @@ public class PowerAnalysisActiveController extends Controller{
     }
 
 
-
-
+    public void startDataCollection() {
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                updateData(Math.random() + "");
+            }
+        }, 0,1000);
+    }
 }

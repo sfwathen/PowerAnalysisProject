@@ -51,7 +51,7 @@
                         </padding>
                      </Label>
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="AB12133" textAlignment="RIGHT" />
+                     <Label fx:id="reportIDText" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" textAlignment="RIGHT" />
                   </children>
                </HBox>
                <HBox prefHeight="30.0" prefWidth="145.0">
@@ -79,7 +79,7 @@
                         </padding>
                      </Label>
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
+                     <Label fx:id="stText" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
                   </children>
                   <VBox.margin>
                      <Insets top="5.0" />
@@ -93,7 +93,7 @@
                         </padding>
                      </Label>
                      <Label prefHeight="30.0" prefWidth="5.0" text=":" />
-                     <Label alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
+                     <Label fx:id="stst" alignment="CENTER" maxWidth="70.0" prefHeight="30.0" prefWidth="70.0" text="DD:HH:MM" textAlignment="RIGHT" />
                   </children>
                   <VBox.margin>
                      <Insets top="5.0" />

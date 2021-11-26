@@ -75,13 +75,7 @@ public class Main extends Application {
 
         stage.show();
 
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                controller.updateData(Math.random() + "");
-            }
-        }, 0,1000);
+        controller.startDataCollection();
 
     }
 
