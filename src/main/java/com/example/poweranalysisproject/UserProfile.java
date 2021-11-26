@@ -8,14 +8,12 @@ public class UserProfile {
     private SimpleStringProperty Building;
     private SimpleStringProperty Room;
     private SimpleStringProperty Department;
-    //private SimpleStringProperty Selected;
 
     public UserProfile(String name, String building, String room, String department){//, String selected) {
         this.Name = new SimpleStringProperty(name);
         this.Building = new SimpleStringProperty(building);
         this.Room = new SimpleStringProperty(room);
         this.Department = new SimpleStringProperty(department);
-        //this.Selected = new SimpleStringProperty(selected);
     }
 
     public String getName() {
@@ -50,11 +48,5 @@ public class UserProfile {
         this.Department = new SimpleStringProperty(department);
     }
 
-    //public String getSelected() {
-    //    return Selected.get();
-    //}
 
-    //public void setSelected(String selected) {
-      //  this.Selected = new SimpleStringProperty(selected);
-    //}
 }

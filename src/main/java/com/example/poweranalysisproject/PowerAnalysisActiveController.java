@@ -61,17 +61,25 @@ public class PowerAnalysisActiveController extends Controller{
     private int totalDisk = 0;
 
     private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
+    private UserProfile currentUser = singleton.getCurrUserProfile();
+    private Threshold currentThreshold;
 
     @FXML
     private void initialize()
     {
-        if (singleton.getCurrUserProfile() == null)
+        if (currentUser == null)
         {
-            //if default settings
+            currentThreshold = singleton.getDefaultThreshold();
         }
         else {
-            currentStatusText.setText("Power Analysis Active on " + singleton.getCurrUserProfile().getName() + " computer");
+            currentThreshold = singleton.getCustomThreshold();
+
+            currentStatusText.setText("Power Analysis Active on " + singleton.getCurrUserProfile().getName() + "'s computer");
         }
+
+        threshCPUText.setText(currentThreshold.getCpuThreshold() + "%");
+        threshDiskText.setText(currentThreshold.getDiskThreshold() + " KB");
+        threshMemText.setText(currentThreshold.getMemThreshold() + " GB");
     }
 
     @FXML

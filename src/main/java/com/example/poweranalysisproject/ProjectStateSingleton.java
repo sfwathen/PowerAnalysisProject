@@ -8,6 +8,11 @@ public class ProjectStateSingleton {
 
     private UserProfile currUserProfile;
 
+    private Threshold customThreshold;
+    private Threshold defaultThreshold = new Threshold(75,700, 14);
+
+
+
     private ProjectStateSingleton() {}
 
     public static ProjectStateSingleton getInstance() {
@@ -22,6 +27,22 @@ public class ProjectStateSingleton {
     public UserProfile getCurrUserProfile()
     {
         return currUserProfile;
+    }
+
+    public Threshold getCustomThreshold() {
+        return customThreshold;
+    }
+
+    public void setCustomThreshold(Threshold customThreshold) {
+        this.customThreshold = customThreshold;
+    }
+
+    public Threshold getDefaultThreshold() {
+        return defaultThreshold;
+    }
+
+    public void setDefaultThreshold(Threshold defaultThreshold) {
+        this.defaultThreshold = defaultThreshold;
     }
 
 
