@@ -14,6 +14,8 @@ public class Main extends Application {
     static final int WIDTH = 600;
     static Report currReport;
 
+    static UserProfile currUser;
+
     private static Stage stage;
 
     @Override
@@ -49,6 +51,21 @@ public class Main extends Application {
         currReport = newCurrReport;
         ReportSummaryController  controller = fxmlLoader.getController();
         controller.updateReportIDText();
+        stage.show();
+    }
+
+    public static void navigateToNewPage(String pageName, UserProfile user) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
+        String name = toUpperCase(pageName.replace('-', ' '));
+        //PowerAnalysisActiveController controller = new PowerAnalysisActiveController(user);
+
+        ///////
+        currUser = user;
+        ///////
+        Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
+        stage.setTitle(name);
+        stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
