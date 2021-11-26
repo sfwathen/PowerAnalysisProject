@@ -63,7 +63,7 @@ public class PowerAnalysisActiveController extends Controller{
     @FXML
     private void initialize()
     {
-        if (Main.currUser == null)
+        if (ProjectStateSingleton.getInstance().getCurrUserProfile() == null)
         {
             //if default settings
         }
