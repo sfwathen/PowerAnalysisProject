@@ -22,6 +22,8 @@ public class ReportSummaryController extends Controller implements Initializable
     public TableColumn<ReportSummaryUser, Double> colDisk;
     public TableColumn<ReportSummaryUser, Boolean> colFlagged;
 
+    private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
+
     @FXML
     private Label reportIDText;
 
@@ -73,10 +75,8 @@ public class ReportSummaryController extends Controller implements Initializable
         colCPU.setCellValueFactory(new PropertyValueFactory<>("UserCPU"));
         colDisk.setCellValueFactory(new PropertyValueFactory<>("UserDisk"));
         colFlagged.setCellValueFactory(new PropertyValueFactory<>("UserFlagged"));
-        reportTable.setItems(reportList);
+        reportTable.setItems(singleton.getReportList());
     }
 
-    ObservableList<ReportSummaryUser> reportList = FXCollections.observableArrayList(
-            new ReportSummaryUser("Collin", 423.5, 2.43, 52.387, true)
-    );
+
 }

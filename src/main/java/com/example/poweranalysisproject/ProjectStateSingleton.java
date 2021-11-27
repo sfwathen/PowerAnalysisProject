@@ -12,13 +12,28 @@ public class ProjectStateSingleton {
     private Threshold defaultThreshold = new Threshold(75,700, 14);
 
     private ObservableList<Report> reportsList = FXCollections.observableArrayList(
-            new Report( "10-10-21", "10-11-21", "Matteo"),
-            new Report("10-12-21", "10-13-21", "Matteo"),
-            new Report( "09-09-21", "09-11-21", "Davide"),
-            new Report("09-23-21", "09-27-21", "Matteo"),
-            new Report("12-11-21", "12-27-21", "Matteo"),
-            new Report( "10-10-21", "10-30-21", "Armstrong")
+//            new Report( "10-10-21", "10-11-21", "Matteo"),
+//            new Report("10-12-21", "10-13-21", "Matteo"),
+//            new Report( "09-09-21", "09-11-21", "Davide"),
+//            new Report("09-23-21", "09-27-21", "Matteo"),
+//            new Report("12-11-21", "12-27-21", "Matteo"),
+//            new Report( "10-10-21", "10-30-21", "Armstrong")
     );
+
+
+
+    private ObservableList<ReportSummaryUser> reportList = FXCollections.observableArrayList(
+            new ReportSummaryUser("Collin", 423.5, 2.43, 52.387, true)
+    );
+
+    public ObservableList<ReportSummaryUser> getReportList() {
+        return reportList;
+    }
+
+    public void addToReportSummaryUser(ReportSummaryUser summaryUser) {
+        reportList.add(0,summaryUser);
+    }
+
 
     public ObservableList<Report> getReportsList() {
         return reportsList;

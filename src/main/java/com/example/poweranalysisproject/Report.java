@@ -20,18 +20,41 @@ public class Report {
     private final SimpleDoubleProperty cpuTreshold;
     private final SimpleDoubleProperty diskTreshold;
 
+    private SimpleStringProperty userName;
+    private SimpleDoubleProperty avgMem;
+    private SimpleDoubleProperty avgCPU;
+    private SimpleDoubleProperty avgDisk;
+
+    private SimpleDoubleProperty highMem;
+    private SimpleDoubleProperty highCPU;
+    private SimpleDoubleProperty highDisk;
+
     private SimpleBooleanProperty flagged;
 
-    public Report(String reportStartDate, String reportEndDate, String reportSupervisor) {
-        this.reportID = generateID();
+    private static int id = 1;
+
+    public Report(String reportStartDate, String reportEndDate, String reportSupervisor,
+                  String userName, int avgMem, int avgCPU, int avgDisk, int highMem, int highCPU, int highDisk,
+                  boolean flagged, Threshold threshold) {
+        this.reportID = new SimpleStringProperty(id++ + "");
         this.reportStartDate = new SimpleStringProperty(reportStartDate);
         this.reportEndDate = new SimpleStringProperty(reportEndDate);
         this.reportSupervisor = new SimpleStringProperty(reportSupervisor);
 
-        // When Sam is finished with default settings, fix default tresholds
-        this.memoryTreshold = new SimpleDoubleProperty(0);
-        this.cpuTreshold = new SimpleDoubleProperty(0);
-        this.diskTreshold = new SimpleDoubleProperty(0);
+        this.userName = new SimpleStringProperty(userName);
+        this.flagged = new SimpleBooleanProperty(flagged);
+
+        this.avgMem = new SimpleDoubleProperty(avgMem);
+        this.avgCPU = new SimpleDoubleProperty(avgCPU);
+        this.avgDisk = new SimpleDoubleProperty(avgDisk);
+
+        this.highMem = new SimpleDoubleProperty(highMem);
+        this.highCPU = new SimpleDoubleProperty(highCPU);
+        this.highDisk = new SimpleDoubleProperty(highDisk);
+
+        this.memoryTreshold = new SimpleDoubleProperty(threshold.getMemThreshold());
+        this.cpuTreshold = new SimpleDoubleProperty(threshold.getCpuThreshold());
+        this.diskTreshold = new SimpleDoubleProperty(threshold.getDiskThreshold());
     }
 
     public SimpleStringProperty generateID(){

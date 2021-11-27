@@ -46,12 +46,14 @@ public class PowerAnalysisActiveController extends Controller{
     @FXML
     private Label threshMemText;
 
+    private boolean flagged = false;
+
     private int count = 0;
     
     private int avgCPU = 0;
     private int avgMem = 0;
     private int avgDisk = 0;
-    
+
     private int highCPU = 0;
     private int highMem = 0;
     private int highDisk = 0;
@@ -139,7 +141,17 @@ public class PowerAnalysisActiveController extends Controller{
 
     public void endAnalysis(ActionEvent actionEvent) {
         try {
+            if (highCPU > currentThreshold.getCpuThreshold() || highDisk > currentThreshold.getDiskThreshold()
+                    || highMem > currentThreshold.getMemThreshold())
+            {
+                flagged = true;
+            }
+
+            Report report = new Report(java.time.LocalDate.now().toString(), java.time.LocalDate.now().toString(), "Matteo",
+                    currentUser.getName(), avgMem, avgCPU, avgDisk, highMem, highCPU, highDisk, flagged, currentThreshold);
+            singleton.addToReportsList(report);
             Main.navigateToNewPage("power-analysis-portal");
+            //
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -160,4 +172,6 @@ public class PowerAnalysisActiveController extends Controller{
             }
         }, 0,1000);
     }
+
+
 }
