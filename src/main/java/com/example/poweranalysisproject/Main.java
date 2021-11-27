@@ -72,8 +72,6 @@ public class Main extends Application {
 
         stage.show();
 
-        //controller.startDataCollection();
-
     }
 
     public static String toUpperCase(String name)

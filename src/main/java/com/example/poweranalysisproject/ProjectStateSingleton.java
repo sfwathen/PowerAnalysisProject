@@ -43,7 +43,7 @@ public class ProjectStateSingleton {
     }
 
     public void addToReportSummaryUser(ReportSummaryUser summaryUser) {
-        reportList.add(0,summaryUser);
+        reportList.add(summaryUser);
     }
 
 
@@ -52,7 +52,7 @@ public class ProjectStateSingleton {
     }
 
     public void addToReportsList(Report newReport) {
-        reportsList.add(0,newReport);
+        reportsList.add(newReport);
     }
 
     private ProjectStateSingleton() {}
