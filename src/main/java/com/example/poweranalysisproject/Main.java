@@ -52,6 +52,7 @@ public class Main extends Application {
         stage.show();
     }
 
+    //Start analysis from custom settings
     public static void navigateToNewPage(String pageName, UserProfile user) throws IOException, InterruptedException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = toUpperCase(pageName.replace('-', ' '));
@@ -71,7 +72,7 @@ public class Main extends Application {
 
         stage.show();
 
-        controller.startDataCollection();
+        //controller.startDataCollection();
 
     }
 

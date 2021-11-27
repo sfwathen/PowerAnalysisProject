@@ -13,6 +13,7 @@ public class PowerAnalysisPortalController extends Controller{
 
     @FXML
     protected void goToActivePowerAnalysis() throws IOException {
+
         Main.navigateToNewPage("power-analysis-active");
     }
 

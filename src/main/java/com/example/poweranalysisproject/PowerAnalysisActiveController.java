@@ -82,6 +82,8 @@ public class PowerAnalysisActiveController extends Controller{
         threshCPUText.setText(currentThreshold.getCpuThreshold() + "%");
         threshDiskText.setText(currentThreshold.getDiskThreshold() + " KB");
         threshMemText.setText(currentThreshold.getMemThreshold() + " GB");
+
+        startDataCollection();
     }
 
     @FXML
