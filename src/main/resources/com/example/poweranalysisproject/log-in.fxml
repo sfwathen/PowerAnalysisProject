@@ -22,12 +22,12 @@
             <Insets bottom="10.0" top="10.0" />
          </VBox.margin>
       </Label>
-      <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Username">
+      <TextField fx:id="usernameTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Username">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
       </TextField>
-      <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Password">
+      <TextField fx:id="passwordTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="250.0" promptText="Password">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
