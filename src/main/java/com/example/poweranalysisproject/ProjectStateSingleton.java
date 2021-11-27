@@ -6,10 +6,22 @@ import javafx.collections.ObservableList;
 public class ProjectStateSingleton {
     private static final ProjectStateSingleton psSingleton = new ProjectStateSingleton();
 
+    private boolean enabled = true;
     private Report currReport;
     private UserProfile currUserProfile;
+    private UserProfile defaultUserProfile = new UserProfile("Davide", "building 1", "room 2", "CSC");
     private Threshold customThreshold;
     private Threshold defaultThreshold = new Threshold(75,700, 14);
+
+    public boolean isDefaultAnalysis() {
+        return defaultAnalysis;
+    }
+
+    public void setDefaultAnalysis(boolean defaultAnalysis) {
+        this.defaultAnalysis = defaultAnalysis;
+    }
+
+    private boolean defaultAnalysis = false;
 
     private ObservableList<Report> reportsList = FXCollections.observableArrayList(
 //            new Report( "10-10-21", "10-11-21", "Matteo"),
@@ -83,6 +95,13 @@ public class ProjectStateSingleton {
         this.defaultThreshold = defaultThreshold;
     }
 
+    public void setEnabled() {this.enabled = true; }
+
+    public void setDisabled() {this.enabled = false; }
+
+    public boolean getEnabled() {return this.enabled; }
+
+    public UserProfile getDefaultUserProfile() {return this.defaultUserProfile;}
 
 
 }
