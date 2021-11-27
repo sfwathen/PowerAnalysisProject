@@ -43,6 +43,6 @@
 
     </VBox>
     <stylesheets>
-        <URL value="@navBar.css" />
+        <URL value="@styles/navBar.css" />
     </stylesheets>
 </VBox>

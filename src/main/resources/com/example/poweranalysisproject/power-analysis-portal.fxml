@@ -18,7 +18,7 @@
             <Button id="settings-btn" mnemonicParsing="false" onAction="#goToSettings" style="-fx-background-color: white;" text="Default Settings" />
             <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" style="-fx-background-color: white;" text="View Reports" />
             <Button id="log-out-btn" mnemonicParsing="false" style="-fx-background-color: white;" text="Log Out" />
-         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matteo Inc." textAlignment="CENTER" wrappingWidth="164.592755317688">
+         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matteo Inc." textAlignment="CENTER" wrappingWidth="254.68549823760986">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
@@ -60,7 +60,7 @@
       </HBox>
     </VBox>
     <stylesheets>
-        <URL value="@navBar.css" />
-        <URL value="@powerAnalysisPortal.css" />
+        <URL value="@styles/navBar.css" />
+        <URL value="@styles/powerAnalysisPortal.css" />
     </stylesheets>
 </VBox>
