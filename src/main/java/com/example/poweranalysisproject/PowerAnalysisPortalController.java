@@ -1,19 +1,35 @@
 package com.example.poweranalysisproject;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 
 import java.io.IOException;
 
 public class PowerAnalysisPortalController extends Controller{
-
     @FXML
     protected void goToAnalysisSettings() throws IOException {
-        Main.navigateToNewPage("analysis-settings");
+        if (!ProjectStateSingleton.getInstance().getEnabled()) {
+            Alert fail = new Alert(Alert.AlertType.ERROR);
+            fail.setHeaderText("Start Power Analysis Failed");
+            fail.setContentText("You cannot start a power analysis because they are currently disabled");
+            fail.showAndWait();
+        } else {
+            Main.navigateToNewPage("analysis-settings");
+        }
     }
 
     @FXML
     protected void goToActivePowerAnalysis() throws IOException {
-        Main.navigateToNewPage("power-analysis-active");
+
+        if (!ProjectStateSingleton.getInstance().getEnabled()) {
+            Alert fail = new Alert(Alert.AlertType.ERROR);
+            fail.setHeaderText("Start Power Analysis Failed");
+            fail.setContentText("You cannot start a power analysis because they are currently disabled");
+            fail.showAndWait();
+        } else {
+            ProjectStateSingleton.getInstance().setDefaultAnalysis(true);
+            Main.navigateToNewPage("power-analysis-active");
+        }
     }
 
     @FXML

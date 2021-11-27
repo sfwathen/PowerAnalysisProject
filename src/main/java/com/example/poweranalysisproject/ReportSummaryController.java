@@ -15,12 +15,34 @@ import java.util.ResourceBundle;
 
 
 public class ReportSummaryController extends Controller implements Initializable {
+    @FXML
+    private TableColumn<ReportSummaryUser, Double> colAvgCpu;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, Double> colAvgDisk;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, Double> colAvgMem;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, String> colFlagged;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, Double> colHighCpu;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, Double> colHighDisk;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, Double> colHighMem;
+
+    @FXML
+    private TableColumn<ReportSummaryUser, String> colName;
+
+
     public TableView<ReportSummaryUser> reportTable;
-    public TableColumn<ReportSummaryUser, String> colName;
-    public TableColumn<ReportSummaryUser, Double> colMemory;
-    public TableColumn<ReportSummaryUser, Double> colCPU;
-    public TableColumn<ReportSummaryUser, Double> colDisk;
-    public TableColumn<ReportSummaryUser, Boolean> colFlagged;
+
+    private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
 
     @FXML
     private Label reportIDText;
@@ -35,13 +57,13 @@ public class ReportSummaryController extends Controller implements Initializable
     private Label reportEndTime;
 
     @FXML
-    private Label reportMemoryTreshold;
+    private Label reportMemoryThreshold;
 
     @FXML
-    private Label reportCPUTreshold;
+    private Label reportCPUThreshold;
 
     @FXML
-    private Label reportDiskTreshold;
+    private Label reportDiskThreshold;
 
     @FXML
     protected void goToUserPool() throws IOException {
@@ -61,22 +83,27 @@ public class ReportSummaryController extends Controller implements Initializable
         reportSupervisor.setText(currReport.getReportSupervisor());
         reportStartTime.setText(currReport.getReportStartDate());
         reportEndTime.setText(currReport.getReportEndDate());
-        reportMemoryTreshold.setText(Double.toString(currReport.getMemoryTreshold()));
-        reportCPUTreshold.setText(Double.toString(currReport.getCpuTreshold()));
-        reportDiskTreshold.setText(Double.toString(currReport.getDiskTreshold()));
+        reportMemoryThreshold.setText(Double.toString(currReport.getMemoryTreshold()));
+        reportCPUThreshold.setText(Double.toString(currReport.getCpuTreshold()));
+        reportDiskThreshold.setText(Double.toString(currReport.getDiskTreshold()));
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        colName.setCellValueFactory(new PropertyValueFactory<>("UserName"));
-        colMemory.setCellValueFactory(new PropertyValueFactory<>("UserMemory"));
-        colCPU.setCellValueFactory(new PropertyValueFactory<>("UserCPU"));
-        colDisk.setCellValueFactory(new PropertyValueFactory<>("UserDisk"));
-        colFlagged.setCellValueFactory(new PropertyValueFactory<>("UserFlagged"));
-        reportTable.setItems(reportList);
+        colName.setCellValueFactory(new PropertyValueFactory<>("userName"));
+        colHighCpu.setCellValueFactory(new PropertyValueFactory<>("highCpu"));
+        colAvgCpu.setCellValueFactory(new PropertyValueFactory<>("avgCpu"));
+        colHighMem.setCellValueFactory(new PropertyValueFactory<>("highMem"));
+        colAvgMem.setCellValueFactory(new PropertyValueFactory<>("avgMem"));
+        colHighDisk.setCellValueFactory(new PropertyValueFactory<>("highDisk"));
+        colAvgDisk.setCellValueFactory(new PropertyValueFactory<>("avgDisk"));
+        colFlagged.setCellValueFactory(new PropertyValueFactory<>("userFlagged"));
+
+        reportTable.setItems(singleton.getReportList());
+
     }
 
-    ObservableList<ReportSummaryUser> reportList = FXCollections.observableArrayList(
-            new ReportSummaryUser("Collin", 423.5, 2.43, 52.387, true)
-    );
+
+
+
 }

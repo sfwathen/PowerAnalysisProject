@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.security.SecureRandom;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -46,12 +48,14 @@ public class PowerAnalysisActiveController extends Controller{
     @FXML
     private Label threshMemText;
 
+    private boolean flagged = false;
+
     private int count = 0;
     
     private int avgCPU = 0;
     private int avgMem = 0;
     private int avgDisk = 0;
-    
+
     private int highCPU = 0;
     private int highMem = 0;
     private int highDisk = 0;
@@ -61,39 +65,52 @@ public class PowerAnalysisActiveController extends Controller{
     private int totalDisk = 0;
 
     private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
-    private UserProfile currentUser = singleton.getCurrUserProfile();
+    private UserProfile currentUser;
     private Threshold currentThreshold;
+
+    private Random randomNums = new SecureRandom();
 
     @FXML
     private void initialize()
     {
-        if (currentUser == null)
+        if (ProjectStateSingleton.getInstance().isDefaultAnalysis())
         {
             currentThreshold = singleton.getDefaultThreshold();
+            currentUser = singleton.getDefaultUserProfile();
+            ProjectStateSingleton.getInstance().setDefaultAnalysis(false);
         }
         else {
             currentThreshold = singleton.getCustomThreshold();
+            currentUser = singleton.getCurrUserProfile();
 
-            currentStatusText.setText("Power Analysis Active on " + singleton.getCurrUserProfile().getName() + "'s computer");
+
         }
-
+        currentStatusText.setText("Power Analysis Active on " + currentUser.getName() + "'s computer");
         threshCPUText.setText(currentThreshold.getCpuThreshold() + "%");
         threshDiskText.setText(currentThreshold.getDiskThreshold() + " KB");
         threshMemText.setText(currentThreshold.getMemThreshold() + " GB");
+
+        startDataCollection();
     }
 
     @FXML
     public void updateData(String input)
     {
-        int curCPU = (int)(Math.random() * 99) + 1;
+        int curCPU = (int)(randomNums.nextGaussian() * 18) + 30;
+        if (curCPU > 100 || curCPU < 0)
+            curCPU = 100 - Math.abs(curCPU);
         if (curCPU > highCPU)
             highCPU = curCPU;
 
-        int curMem = (int)(Math.random() * 15) + 1;
+        int curMem = (int)(randomNums.nextGaussian() * 3) + 7;
+        if (curMem > 16 || curMem < 0)
+            curMem = 16 - Math.abs(curMem);
         if (curMem > highMem)
             highMem = curMem;
 
-        int curDisk = (int) (Math.random() * 999) + 1;
+        int curDisk = (int) (randomNums.nextGaussian() * 180) + 500;
+        if (curDisk > 1000 || curDisk < 0)
+            curDisk = 1000 - Math.abs(curDisk);
         if (curDisk > highDisk)
             highDisk = curDisk;
         
@@ -139,7 +156,17 @@ public class PowerAnalysisActiveController extends Controller{
 
     public void endAnalysis(ActionEvent actionEvent) {
         try {
+            if (highCPU > currentThreshold.getCpuThreshold() || highDisk > currentThreshold.getDiskThreshold()
+                    || highMem > currentThreshold.getMemThreshold())
+            {
+                flagged = true;
+            }
+
+            Report report = new Report(java.time.LocalDate.now().toString(), java.time.LocalDate.now().toString(), "Matteo",
+                    currentUser.getName(), avgMem, avgCPU, avgDisk, highMem, highCPU, highDisk, flagged, currentThreshold, currentUser);
+            singleton.addToReportsList(report);
             Main.navigateToNewPage("power-analysis-portal");
+            //
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -160,4 +187,6 @@ public class PowerAnalysisActiveController extends Controller{
             }
         }, 0,1000);
     }
+
+
 }

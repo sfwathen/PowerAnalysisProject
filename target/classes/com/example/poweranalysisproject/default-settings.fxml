@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.DefaultSettingsController">
+<VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.DefaultSettingsController">
 
     <ToolBar prefHeight="40.0" prefWidth="600.0">
         <items>
@@ -28,17 +24,17 @@
         <children>
             <Pane prefHeight="321.0" prefWidth="503.0">
                 <children>
-                    <Button layoutX="355.0" layoutY="245.0" mnemonicParsing="false" prefWidth="100.0" text="Save Settings" />
-                    <TextField fx:id="MemoryTreshold" layoutX="305.0" layoutY="88.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Memory Usage Treshold" />
-                    <TextField fx:id="CPUTreshold" layoutX="305.0" layoutY="136.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter CPU Usage Treshold" />
-                    <TextField fx:id="DiskTreshold" layoutX="305.0" layoutY="184.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Disk Usage Treshold" />
+                    <Button layoutX="355.0" layoutY="245.0" mnemonicParsing="false" onAction="#saveThresholds" prefWidth="100.0" text="Save Settings" />
+                    <TextField fx:id="memoryThreshold" layoutX="305.0" layoutY="88.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Memory Usage Treshold" />
+                    <TextField fx:id="cpuThreshold" layoutX="305.0" layoutY="136.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter CPU Usage Treshold" />
+                    <TextField fx:id="diskThreshold" layoutX="305.0" layoutY="184.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Disk Usage Treshold" />
                     <Label layoutX="105.0" layoutY="22.0" text="Set Default Analysis Settings">
                         <font>
                             <Font size="28.0" />
                         </font>
                     </Label>
-               <Button layoutX="53.0" layoutY="88.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Enable Power Analysis" />
-               <Button layoutX="53.0" layoutY="136.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Disable Power Analysis" />
+               <Button layoutX="53.0" layoutY="88.0" mnemonicParsing="false" onAction="#enableAnalysis" prefHeight="25.0" prefWidth="200.0" text="Enable Power Analysis" />
+               <Button layoutX="53.0" layoutY="136.0" mnemonicParsing="false" onAction="#disableAnalysis" prefHeight="25.0" prefWidth="200.0" text="Disable Power Analysis" />
                <Button layoutX="53.0" layoutY="184.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="200.0" text="Set Default User Pool" />
                <Button layoutX="103.0" layoutY="245.0" mnemonicParsing="false" onAction="#goToHomePage" prefWidth="100.0" text="Back to Home" />
                 </children>
