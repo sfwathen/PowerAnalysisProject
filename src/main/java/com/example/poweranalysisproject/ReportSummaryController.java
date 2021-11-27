@@ -76,6 +76,7 @@ public class ReportSummaryController extends Controller implements Initializable
         colDisk.setCellValueFactory(new PropertyValueFactory<>("UserDisk"));
         colFlagged.setCellValueFactory(new PropertyValueFactory<>("UserFlagged"));
         reportTable.setItems(singleton.getReportList());
+
     }
 
 
