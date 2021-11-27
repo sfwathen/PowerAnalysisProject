@@ -23,7 +23,7 @@ public class ProjectStateSingleton {
 
 
     private ObservableList<ReportSummaryUser> reportList = FXCollections.observableArrayList(
-            new ReportSummaryUser("Collin", 423.5, 2.43, 52.387, true)
+            //new ReportSummaryUser("Collin", 423.5, 2.43, 52.387, true)
     );
 
     public ObservableList<ReportSummaryUser> getReportList() {

@@ -6,56 +6,121 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ReportSummaryUser {
     private SimpleStringProperty userName;
-    private SimpleDoubleProperty userMemory;
-    private SimpleDoubleProperty userCPU;
-    private SimpleDoubleProperty userDisk;
-    private SimpleBooleanProperty userFlagged;
+    private SimpleDoubleProperty highMem;
+    private SimpleDoubleProperty avgMem;
+    private SimpleDoubleProperty highCpu;
+    private SimpleDoubleProperty avgCpu;
+    private SimpleDoubleProperty highDisk;
+    private SimpleDoubleProperty avgDisk;
+    private SimpleStringProperty userFlagged;
 
-    public ReportSummaryUser(String userName, double userMemory, double userCPU, double userDisk, boolean userFlagged) {
-        this.userName = new SimpleStringProperty(userName);
-        this.userMemory = new SimpleDoubleProperty(userMemory);
-        this.userCPU = new SimpleDoubleProperty(userCPU);
-        this.userDisk = new SimpleDoubleProperty(userDisk);
-        this.userFlagged = new SimpleBooleanProperty(userFlagged);
+
+
+    public ReportSummaryUser(SimpleStringProperty userName, SimpleDoubleProperty highMem, SimpleDoubleProperty avgMem, SimpleDoubleProperty highCpu, SimpleDoubleProperty avgCpu, SimpleDoubleProperty highDisk, SimpleDoubleProperty avgDisk, SimpleStringProperty userFlagged) {
+        this.userName = userName;
+        this.highMem = highMem;
+        this.avgMem = avgMem;
+        this.highCpu = highCpu;
+        this.avgCpu = avgCpu;
+        this.highDisk = highDisk;
+        this.avgDisk = avgDisk;
+        this.userFlagged = userFlagged;
     }
 
     public String getUserName() {
         return userName.get();
     }
 
+    public SimpleStringProperty userNameProperty() {
+        return userName;
+    }
+
     public void setUserName(String userName) {
-        this.userName = new SimpleStringProperty(userName);
+        this.userName.set(userName);
     }
 
-    public double getUserMemory() {
-        return userMemory.get();
+    public double getHighMem() {
+        return highMem.get();
     }
 
-    public void setUserMemory(double userMemory) {
-        this.userMemory = new SimpleDoubleProperty(userMemory);
+    public SimpleDoubleProperty highMemProperty() {
+        return highMem;
     }
 
-    public double getUserCPU() {
-        return userCPU.get();
+    public void setHighMem(double highMem) {
+        this.highMem.set(highMem);
     }
 
-    public void setUserCPU(double userCPU) {
-        this.userCPU = new SimpleDoubleProperty(userCPU);
+    public double getAvgMem() {
+        return avgMem.get();
     }
 
-    public double getUserDisk() {
-        return userDisk.get();
+    public SimpleDoubleProperty avgMemProperty() {
+        return avgMem;
     }
 
-    public void setUserDisk(double userDisk) {
-        this.userDisk = new SimpleDoubleProperty(userDisk);
+    public void setAvgMem(double avgMem) {
+        this.avgMem.set(avgMem);
     }
 
-    public boolean isUserFlagged() {
+    public double getHighCpu() {
+        return highCpu.get();
+    }
+
+    public SimpleDoubleProperty highCpuProperty() {
+        return highCpu;
+    }
+
+    public void setHighCpu(double highCpu) {
+        this.highCpu.set(highCpu);
+    }
+
+    public double getAvgCpu() {
+        return avgCpu.get();
+    }
+
+    public SimpleDoubleProperty avgCpuProperty() {
+        return avgCpu;
+    }
+
+    public void setAvgCpu(double avgCpu) {
+        this.avgCpu.set(avgCpu);
+    }
+
+    public double getHighDisk() {
+        return highDisk.get();
+    }
+
+    public SimpleDoubleProperty highDiskProperty() {
+        return highDisk;
+    }
+
+    public void setHighDisk(double highDisk) {
+        this.highDisk.set(highDisk);
+    }
+
+    public double getAvgDisk() {
+        return avgDisk.get();
+    }
+
+    public SimpleDoubleProperty avgDiskProperty() {
+        return avgDisk;
+    }
+
+    public void setAvgDisk(double avgDisk) {
+        this.avgDisk.set(avgDisk);
+    }
+
+    public String getUserFlagged() {
         return userFlagged.get();
     }
 
-    public void setUserFlagged(boolean userFlagged) {
-        this.userFlagged = new SimpleBooleanProperty(userFlagged);
+    public SimpleStringProperty userFlaggedProperty() {
+        return userFlagged;
+    }
+
+    public void setUserFlagged(String userFlagged) {
+        this.userFlagged.set(userFlagged);
     }
 }
+

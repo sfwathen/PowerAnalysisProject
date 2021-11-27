@@ -29,7 +29,9 @@ public class Report {
     private SimpleDoubleProperty highCPU;
     private SimpleDoubleProperty highDisk;
 
-    private SimpleBooleanProperty flagged;
+    private SimpleStringProperty flagged;
+
+    private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
 
     private static int id = 1;
 
@@ -42,7 +44,10 @@ public class Report {
         this.reportSupervisor = new SimpleStringProperty(reportSupervisor);
 
         this.userName = new SimpleStringProperty(userName);
-        this.flagged = new SimpleBooleanProperty(flagged);
+        if (flagged)
+            this.flagged = new SimpleStringProperty("True");
+        else
+            this.flagged = new SimpleStringProperty("False");
 
         this.avgMem = new SimpleDoubleProperty(avgMem);
         this.avgCPU = new SimpleDoubleProperty(avgCPU);
@@ -55,7 +60,12 @@ public class Report {
         this.memoryTreshold = new SimpleDoubleProperty(threshold.getMemThreshold());
         this.cpuTreshold = new SimpleDoubleProperty(threshold.getCpuThreshold());
         this.diskTreshold = new SimpleDoubleProperty(threshold.getDiskThreshold());
+
+        ReportSummaryUser user = new ReportSummaryUser(new SimpleStringProperty(singleton.getCurrUserProfile().getName())
+                ,this.highCPU, this.avgCPU, this.highMem, this.avgMem, this.highDisk, this.avgDisk, this.flagged);
+        singleton.addToReportSummaryUser(user);
     }
+
 
     public SimpleStringProperty generateID(){
         int rnd = new Random().nextInt(999999);;
@@ -130,15 +140,15 @@ public class Report {
         this.diskTreshold.set(diskTreshold);
     }
 
-    public boolean isFlagged() {
+    public String isFlagged() {
         return flagged.get();
     }
 
-    public SimpleBooleanProperty flaggedProperty() {
+    public SimpleStringProperty flaggedProperty() {
         return flagged;
     }
 
-    public void setFlagged(boolean flagged) {
+    public void setFlagged(String flagged) {
         this.flagged.set(flagged);
     }
 }
