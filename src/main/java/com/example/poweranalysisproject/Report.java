@@ -37,7 +37,7 @@ public class Report {
 
     public Report(String reportStartDate, String reportEndDate, String reportSupervisor,
                   String userName, int avgMem, int avgCPU, int avgDisk, int highMem, int highCPU, int highDisk,
-                  boolean flagged, Threshold threshold) {
+                  boolean flagged, Threshold threshold, UserProfile user) {
         this.reportID = new SimpleStringProperty(id++ + "");
         this.reportStartDate = new SimpleStringProperty(reportStartDate);
         this.reportEndDate = new SimpleStringProperty(reportEndDate);
@@ -61,9 +61,9 @@ public class Report {
         this.cpuTreshold = new SimpleDoubleProperty(threshold.getCpuThreshold());
         this.diskTreshold = new SimpleDoubleProperty(threshold.getDiskThreshold());
 
-        ReportSummaryUser user = new ReportSummaryUser(new SimpleStringProperty(singleton.getCurrUserProfile().getName())
+        ReportSummaryUser userProfile = new ReportSummaryUser(new SimpleStringProperty(user.getName())
                 ,this.highCPU, this.avgCPU, this.highMem, this.avgMem, this.highDisk, this.avgDisk, this.flagged);
-        singleton.addToReportSummaryUser(user);
+        singleton.addToReportSummaryUser(userProfile);
     }
 
 
