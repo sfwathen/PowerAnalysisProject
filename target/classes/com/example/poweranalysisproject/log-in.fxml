@@ -7,17 +7,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<?import java.net.URL?>
-<VBox styleClass="sceneBackground" alignment="TOP_CENTER" prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.LoginController">
+<VBox alignment="TOP_CENTER" prefHeight="400" prefWidth="600" style="-fx-background-color: A6DEDB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.LoginController">
 
 <!--   Page Contents-->
-   <VBox alignment="CENTER" maxHeight="250.0" maxWidth="300.0" prefHeight="250.0" prefWidth="300.0" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <VBox alignment="CENTER" maxHeight="250.0" maxWidth="300.0" prefHeight="250.0" prefWidth="300.0" style="-fx-border-color: White; -fx-border-width: 10; -fx-border-radius: 12; -fx-background-color: #2B7A78 #2B7A78; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
       <VBox.margin>
          <Insets top="75.0" />
       </VBox.margin>
-      <Label alignment="CENTER" contentDisplay="TEXT_ONLY" text="Log In" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="TEXT_ONLY" text="Log In" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font size="24.0" />
+            <Font size="32.0" />
          </font>
          <VBox.margin>
             <Insets bottom="10.0" top="10.0" />
@@ -33,19 +32,10 @@
             <Insets bottom="10.0" />
          </VBox.margin>
       </TextField>
-      <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: blue;" text="Forgot Password?" textAlignment="CENTER" underline="true">
-         <VBox.margin>
-            <Insets bottom="10.0" />
-         </VBox.margin>
-      </Label>
       <Button mnemonicParsing="false" onAction="#goToHomePage" prefHeight="26.0" prefWidth="126.0" text="Log In">
          <VBox.margin>
             <Insets bottom="10.0" />
          </VBox.margin>
       </Button>
    </VBox>
-
-   <stylesheets>
-      <URL value="@styles/main.css" />
-   </stylesheets>
 </VBox>
