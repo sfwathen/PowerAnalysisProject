@@ -1,4 +1,11 @@
-.sceneBackground{
+.sceneBackground {
     -fx-background-color: #2B7A78;
 }
+
+.company-name {
+    -fx-fill: #FFFFFF;
+}
+
+Darker Blue - #2B7A78
+Lighter Blue - #A6DEDB
 

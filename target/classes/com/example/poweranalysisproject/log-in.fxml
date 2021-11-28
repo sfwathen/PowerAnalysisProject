@@ -7,7 +7,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.LoginController">
+<?import java.net.URL?>
+<VBox styleClass="sceneBackground" alignment="TOP_CENTER" prefHeight="400" prefWidth="600" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="com.example.poweranalysisproject.LoginController">
 
 <!--   Page Contents-->
    <VBox alignment="CENTER" maxHeight="250.0" maxWidth="300.0" prefHeight="250.0" prefWidth="300.0" style="-fx-border-color: black; -fx-border-width: 1;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
@@ -43,4 +44,8 @@
          </VBox.margin>
       </Button>
    </VBox>
+
+   <stylesheets>
+      <URL value="@styles/main.css" />
+   </stylesheets>
 </VBox>
