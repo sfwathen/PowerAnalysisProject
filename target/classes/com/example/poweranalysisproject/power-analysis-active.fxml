@@ -8,43 +8,55 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.PowerAnalysisActiveController">
-
-   <ToolBar prefHeight="40.0" prefWidth="600.0">
+<VBox prefHeight="400" prefWidth="600" style="-fx-background-color: #A6DEDB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.PowerAnalysisActiveController">
+   <ToolBar prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
       <items>
          <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />
          <Button id="settings-btn" mnemonicParsing="false" onAction="#goToSettings" text="Default Settings" />
          <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" text="View Reports" />
          <Button id="log-out-btn" mnemonicParsing="false" text="Log Out" />
+         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matteo Inc." textAlignment="CENTER" wrappingWidth="159.68549823760986">
+            <font>
+               <Font name="System Bold" size="18.0" />
+            </font>
+         </Text>
       </items>
    </ToolBar>
 
-    <VBox alignment="CENTER" prefHeight="60.0" spacing="20.0">
+    <VBox alignment="CENTER" prefHeight="89.0" prefWidth="571.0" spacing="20.0" style="-fx-border-color: A6DEDB; -fx-border-width: 10; -fx-background-color: white;">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
 
-        <Label fx:id="currentStatusText" text="Power Analysis Active">
+        <Label fx:id="currentStatusText" prefHeight="150.0" prefWidth="467.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Power Analysis Active        " textAlignment="CENTER" translateX="15.0">
          <font>
             <Font size="24.0" />
          </font></Label>
     </VBox>
    <HBox prefHeight="300.0" prefWidth="600.0">
       <children>
-         <VBox prefHeight="300.0" prefWidth="400.0">
+         <VBox prefHeight="291.0" prefWidth="602.0">
             <children>
-               <HBox prefHeight="30.0" prefWidth="200.0">
+               <HBox prefHeight="42.0" prefWidth="600.0">
                   <children>
                      <Label fx:id="startTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" />
-                     <Label fx:id="activeTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" text="Active Time" />
+                     <Label fx:id="activeTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Active Time">
+                        <font>
+                           <Font size="16.0" />
+                        </font></Label>
                   </children>
                </HBox>
                <HBox prefHeight="170.0" prefWidth="400.0">
                   <children>
-                     <VBox prefHeight="170.0" prefWidth="200.0">
+                     <VBox prefHeight="81.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
                         <children>
-                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Highest Usage Metrics:" />
+                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Highest Usage Metrics:">
+                              <font>
+                                 <Font name="System Bold" size="13.0" />
+                              </font></Label>
+                           <HBox prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: A6DEDB;" />
                            <HBox prefHeight="30.0" prefWidth="200.0">
                               <children>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Memory Usage">
@@ -80,9 +92,13 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox prefHeight="170.0" prefWidth="200.0">
+                     <VBox prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
                         <children>
-                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Current System Usage Metrics:" />
+                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Current System Usage Metrics:">
+                              <font>
+                                 <Font name="System Bold" size="13.0" />
+                              </font></Label>
+                           <HBox prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: A6DEDB;" />
                            <HBox prefHeight="30.0" prefWidth="200.0">
                               <children>
                                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Memory Usage">
@@ -118,50 +134,51 @@
                            </HBox>
                         </children>
                      </VBox>
+                     <VBox prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
+                        <children>
+                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Power Thresholds:" />
+                           <HBox prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: A6DEDB;" />
+                           <HBox prefHeight="30.0" prefWidth="200.0">
+                              <children>
+                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Memory Usage">
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                 </Label>
+                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
+                                 <Label fx:id="threshMemText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
+                              </children>
+                           </HBox>
+                           <HBox prefHeight="30.0" prefWidth="200.0">
+                              <children>
+                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="CPU Usage">
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                 </Label>
+                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
+                                 <Label fx:id="threshCPUText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
+                              </children>
+                           </HBox>
+                           <HBox prefHeight="30.0" prefWidth="200.0">
+                              <children>
+                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Disk Usage">
+                                    <padding>
+                                       <Insets left="10.0" />
+                                    </padding>
+                                 </Label>
+                                 <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
+                                 <Label fx:id="threshDiskText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
+                              </children>
+                           </HBox>
+                        </children>
+                     </VBox>
                   </children>
                </HBox>
-               <HBox prefHeight="90.0" prefWidth="400.0" />
-            </children>
-         </VBox>
-         <VBox prefHeight="300.0" prefWidth="200.0">
-            <children>
-               <Label alignment="CENTER" prefHeight="30.0" prefWidth="200.0" />
-               <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Power Thresholds:" />
-               <HBox prefHeight="30.0" prefWidth="200.0">
+               <HBox prefHeight="91.0" prefWidth="600.0">
                   <children>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Memory Usage">
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <Label fx:id="threshMemText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
-                  </children>
-               </HBox>
-               <HBox prefHeight="30.0" prefWidth="200.0">
-                  <children>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="CPU Usage">
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <Label fx:id="threshCPUText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
-                  </children>
-               </HBox>
-               <HBox prefHeight="30.0" prefWidth="200.0">
-                  <children>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Disk Usage">
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </Label>
-                     <Label alignment="CENTER" prefHeight="30.0" prefWidth="6.0" text=":" />
-                     <Label fx:id="threshDiskText" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="800.000" />
-                  </children>
-               </HBox>
-               <HBox prefHeight="30.0" prefWidth="200.0" />
-               <Button mnemonicParsing="false" onAction="#endAnalysis" prefHeight="40.0" prefWidth="140.0" text="End Power Analysis" />
+                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#endAnalysis" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #2B7A78;" text="End Power Analysis" textAlignment="CENTER" textFill="WHITE" translateX="230.0" translateY="20.0" />
+                  </children></HBox>
             </children>
          </VBox>
       </children>

@@ -61,6 +61,9 @@
     </VBox>
     <stylesheets>
         <URL value="@styles/navBar.css" />
-        <URL value="@styles/powerAnalysisPortal.css" />
     </stylesheets>
 </VBox>
+
+  <!--      Darker Blue - #2B7A78
+        Lighter Blue - #A6DEDB-->
+
