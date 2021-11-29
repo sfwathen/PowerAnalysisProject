@@ -13,15 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class TestPowerAnalysis {
 
     @Test
-    public void loopOneCheckTitleConverter()
-    {
+    public void loopOneCheckTitleConverter() {
         String pageName = Main.toUpperCase("my tester page");
         assertEquals("My Tester Page", pageName);
     }
 
     @Test
-    public void loopTwoCheckTitleConverter()
-    {
+    public void loopTwoCheckTitleConverter() {
         String pageName = Main.toUpperCase("this test verifies the usage of our title converter");
         assertEquals("This Test Verifies The Usage Of Our Title Converter", pageName);
     }
@@ -40,58 +38,54 @@ public class TestPowerAnalysis {
 //    }
 
     @Test
-    public void testUserProfileName()
-    {
+    public void testUserProfileName() {
         UserProfile user = new UserProfile("Matteo", "Building 5", "Room 3", "SW");
         assertEquals(user.getName(), "Matteo");
     }
 
     @Test
-    public void testUserProfileBuilding()
-    {
+    public void testUserProfileBuilding() {
         UserProfile user = new UserProfile("Matteo", "Building 5", "Room 3", "SW");
         user.setBuilding("Building 6");
         assertEquals(user.getBuilding(), "Building 6");
     }
 
     @Test
-    public void testUserProfileRoom()
-    {
+    public void testUserProfileRoom() {
         UserProfile user = new UserProfile("Matteo", "Building 5", "Room 3", "SW");
         assertEquals(user.getRoom(), "Room 3");
     }
 
     @Test
-    public void testUserProfileDepartment()
-    {
+    public void testUserProfileDepartment() {
         UserProfile user = new UserProfile("Matteo", "Building 5", "Room 3", "SW");
         user.setDepartment("CS");
         assertEquals(user.getDepartment(), "CS");
     }
 
     @Test
-    public void testThresholdCpu()
-    {
+    public void testThresholdCpu() {
         Threshold threshold = new Threshold(5,40, 45);
         assertEquals(threshold.getCpuThreshold(), 5);
     }
 
     @Test
-    public void testThresholdDisk()
-    {
+    public void testThresholdDisk() {
         Threshold threshold = new Threshold(5,40, 45);
         assertEquals(threshold.getDiskThreshold(), 40);
     }
 
     @Test
-    public void testThresholdMem()
-    {
+    public void testThresholdMem() {
         Threshold threshold = new Threshold(5,40, 45);
         assertEquals(threshold.getMemThreshold(), 45);
     }
 
-
-
-
+    @Test
+    public void testFormatID() {
+        int testID = 1;
+        String formatted_id = Report.formatID(testID);
+        assertEquals("000001",formatted_id);
+    }
 
 }
