@@ -94,7 +94,7 @@ public class PowerAnalysisActiveController extends Controller{
     }
 
     @FXML
-    public void updateData(String input)
+    public void updateData()
     {
         int curCPU = (int)(randomNums.nextGaussian() * 16) + 40;
         if (curCPU > 100 || curCPU < 0)
@@ -187,7 +187,7 @@ public class PowerAnalysisActiveController extends Controller{
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                updateData(Math.random() + "");
+                updateData();
             }
         }, 0,1000);
     }

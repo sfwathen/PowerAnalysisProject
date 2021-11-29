@@ -69,7 +69,6 @@ public class Main extends Application {
         stage.show();
 
         PowerAnalysisActiveController controller = fxmlLoader.getController();
-        controller.updateData("start");
 
         stage.show();
 
