@@ -14,7 +14,7 @@ public class AnalysisSettingsController extends Controller{
     private int verifiedMemThreshold;
     private int verifiedDiskThreshold;
 
-    private final String inValid = "Not Valid!";
+
 
     @FXML
     private TextField cpuThreshold;
@@ -59,89 +59,22 @@ public class AnalysisSettingsController extends Controller{
     @FXML
     protected void goToUserPool() throws IOException {
 
-        boolean cpuValid = validateCPUThreshold();
-        boolean memValid = validateMemThreshold();
-        boolean diskValid = validateDiskThreshold();
+        int cpuValid = ValidateSettingInput.validateCPUThreshold(cpuThreshold);
+        int memValid = ValidateSettingInput.validateMemThreshold(memoryThreshold);
+        int diskValid = ValidateSettingInput.validateDiskThreshold(diskThreshold);
 
-        if (cpuValid && memValid && diskValid) {
+        if (cpuValid > 0 && memValid > 0 && diskValid > 0) {
+            verifiedDiskThreshold = diskValid;
+            verifiedMemThreshold = memValid;
+            verifiedCPUThreshold = cpuValid;
+
             Threshold threshold = new Threshold(verifiedCPUThreshold, verifiedDiskThreshold, verifiedMemThreshold);
             ProjectStateSingleton.getInstance().setCustomThreshold(threshold);
             Main.navigateToNewPage("user-pool");
         }
     }
 
-    private boolean validateDiskThreshold() {
-        boolean valid = true;
 
-        String diskText = diskThreshold.getText();
-
-        try
-        {
-            int disk = Integer.parseInt(diskText);
-            if (disk < 0 || disk > 1000)
-                valid = false;
-            else
-                verifiedDiskThreshold = disk;
-        }
-        catch (Exception e)
-        {
-            valid = false;
-        }
-
-        if (!valid)
-            diskThreshold.setText(inValid);
-
-        return valid;
-    }
-
-    private boolean validateMemThreshold() {
-        boolean valid = true;
-
-        String memoryText = memoryThreshold.getText();
-
-        try
-        {
-            int mem = Integer.parseInt(memoryText);
-            if (mem < 0 || mem > 16)
-                valid = false;
-            else
-                verifiedMemThreshold = mem;
-        }
-        catch (Exception e)
-        {
-            valid = false;
-        }
-
-        if (!valid)
-            memoryThreshold.setText(inValid);
-
-        return valid;
-    }
-
-    private boolean validateCPUThreshold() {
-
-        boolean valid = true;
-
-        String cpuText = cpuThreshold.getText();
-
-        try
-        {
-            int cpu = Integer.parseInt(cpuText);
-            if (cpu < 0 || cpu > 100)
-                valid = false;
-            else
-                verifiedCPUThreshold = cpu;
-        }
-        catch (Exception e)
-        {
-            valid = false;
-        }
-
-        if (!valid)
-            cpuThreshold.setText(inValid);
-
-        return valid;
-    }
 }
 
 
