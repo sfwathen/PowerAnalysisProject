@@ -1,5 +1,6 @@
 package com.example.poweranalysisproject;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
@@ -46,6 +47,11 @@ public class AnalysisSettingsController extends Controller{
     @FXML
     protected void goBack() throws IOException {
         Main.navigateToNewPage("power-analysis-portal");
+    }
+
+    @FXML
+    protected void logOut() throws IOException {
+        Main.navigateToNewPage("log-in");
     }
 
     @FXML
@@ -134,8 +140,6 @@ public class AnalysisSettingsController extends Controller{
 
         return valid;
     }
-
-
 }
 
 

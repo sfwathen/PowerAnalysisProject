@@ -46,6 +46,11 @@ public class ReportsViewerController implements Initializable {
         Main.navigateToNewPage("default-settings");
     }
 
+    @FXML
+    protected void logOut() throws IOException {
+        Main.navigateToNewPage("log-in");
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         reportIDColumn.setCellValueFactory(new PropertyValueFactory<>("ReportID"));
@@ -61,12 +66,10 @@ public class ReportsViewerController implements Initializable {
         if(event.getClickCount() == 2 && rowReport != null){
             Main.navigateToNewPage("report-summary", rowReport);
         }
-
     }
 
     @FXML
     void viewReports(ActionEvent event) {
-
+        //this is useless
     }
-
 }

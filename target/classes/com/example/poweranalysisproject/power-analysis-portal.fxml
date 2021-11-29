@@ -12,13 +12,13 @@
 
 <VBox prefHeight="400" prefWidth="600" style="-fx-background-color: #A6DEDB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.PowerAnalysisPortalController">
 
-    <ToolBar prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #2B7A78 #2B7A78;">
+    <ToolBar prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
         <items>
-            <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" style="-fx-background-color: white;" text="Home" />
-            <Button id="settings-btn" mnemonicParsing="false" onAction="#goToSettings" style="-fx-background-color: white;" text="Default Settings" />
-            <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" style="-fx-background-color: white;" text="View Reports" />
-            <Button id="log-out-btn" mnemonicParsing="false" style="-fx-background-color: white;" text="Log Out" />
-         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matteo Inc." textAlignment="CENTER" wrappingWidth="254.68549823760986">
+            <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />
+            <Button id="settings-btn" mnemonicParsing="false" onAction="#goToSettings" text="Default Settings" />
+            <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" text="View Reports" />
+            <Button id="log-out-btn" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
+         <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matteo Inc." textAlignment="CENTER" wrappingWidth="159.68549823760986">
             <font>
                <Font name="System Bold" size="18.0" />
             </font>
@@ -61,6 +61,10 @@
     </VBox>
     <stylesheets>
         <URL value="@styles/navBar.css" />
-        <URL value="@styles/powerAnalysisPortal.css" />
     </stylesheets>
 </VBox>
+
+  <!--
+        Darker Blue - #2B7A78
+        Lighter Blue - #A6DEDB-->
+

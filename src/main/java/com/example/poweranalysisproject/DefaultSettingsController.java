@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class DefaultSettingsController {
+public class DefaultSettingsController extends Controller{
     private int verifiedCPUThreshold;
     private int verifiedMemThreshold;
     private int verifiedDiskThreshold;
@@ -26,7 +26,7 @@ public class DefaultSettingsController {
     }
 
     @FXML
-    protected void goToLoginPage() throws IOException {
+    protected void logOut() throws IOException {
         Main.navigateToNewPage("log-in");
     }
 
@@ -40,7 +40,8 @@ public class DefaultSettingsController {
         Main.navigateToNewPage("default-settings");
     }
 
-    public void saveThresholds() {
+    @FXML
+    protected void saveThresholds() {
         boolean cpuValid = validateCPUThreshold();
         boolean memValid = validateMemThreshold();
         boolean diskValid = validateDiskThreshold();
@@ -131,4 +132,5 @@ public class DefaultSettingsController {
     public void disableAnalysis() {
         ProjectStateSingleton.getInstance().setDisabled();
     }
+
 }
