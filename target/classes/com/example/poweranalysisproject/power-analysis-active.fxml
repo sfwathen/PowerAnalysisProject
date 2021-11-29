@@ -45,14 +45,17 @@
                      <Label fx:id="activeTime" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Active Time">
                         <font>
                            <Font size="16.0" />
-                        </font></Label>
+                        </font>
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin></Label>
                   </children>
                </HBox>
                <HBox prefHeight="170.0" prefWidth="400.0">
                   <children>
                      <VBox prefHeight="81.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
                         <children>
-                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Highest Usage Metrics:">
+                           <Label alignment="CENTER" prefHeight="50.0" prefWidth="190.0" text="Highest Usage Metrics:">
                               <font>
                                  <Font name="System Bold" size="13.0" />
                               </font></Label>
@@ -92,9 +95,9 @@
                            </HBox>
                         </children>
                      </VBox>
-                     <VBox prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
+                     <VBox prefHeight="178.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
                         <children>
-                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Current System Usage Metrics:">
+                           <Label alignment="CENTER" prefHeight="50.0" prefWidth="190.0" text="Current System Usage Metrics:">
                               <font>
                                  <Font name="System Bold" size="13.0" />
                               </font></Label>
@@ -136,7 +139,7 @@
                      </VBox>
                      <VBox prefHeight="300.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 22; -fx-border-color: A6DEDB; -fx-border-width: 5;">
                         <children>
-                           <Label alignment="CENTER" prefHeight="60.0" prefWidth="200.0" text="Power Thresholds:" />
+                           <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Power Thresholds:" />
                            <HBox prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: A6DEDB;" />
                            <HBox prefHeight="30.0" prefWidth="200.0">
                               <children>
@@ -174,10 +177,16 @@
                         </children>
                      </VBox>
                   </children>
+                  <VBox.margin>
+                     <Insets top="5.0" />
+                  </VBox.margin>
                </HBox>
-               <HBox prefHeight="91.0" prefWidth="600.0">
+               <HBox prefHeight="93.0" prefWidth="600.0">
                   <children>
-                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#endAnalysis" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #2B7A78;" text="End Power Analysis" textAlignment="CENTER" textFill="WHITE" translateX="230.0" translateY="20.0" />
+                     <Button alignment="CENTER" mnemonicParsing="false" onAction="#endAnalysis" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #2B7A78;" text="End Power Analysis" textAlignment="CENTER" textFill="WHITE" translateX="230.0" translateY="20.0">
+                        <HBox.margin>
+                           <Insets bottom="5.0" />
+                        </HBox.margin></Button>
                   </children></HBox>
             </children>
          </VBox>
