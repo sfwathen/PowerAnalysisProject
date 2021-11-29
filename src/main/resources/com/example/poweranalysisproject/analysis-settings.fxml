@@ -68,9 +68,9 @@
                <TextField fx:id="diskThreshold" layoutX="67.0" layoutY="154.0" prefHeight="25.0" prefWidth="200.0" promptText="Enter Disk Usage Treshold" style="-fx-background-color: white; -fx-border-color: #2B7A78; -fx-border-radius: 5; -fx-border-width: 2;" />
                <DatePicker fx:id="textFieldStartDate" layoutX="316.0" layoutY="38.0" prefHeight="25.0" prefWidth="165.0" promptText="Enter Start Date M/D/Y" style="-fx-background-color: white; -fx-border-color: #2B7A78; -fx-border-radius: 5; -fx-border-width: 2;" />
                <DatePicker fx:id="textFieldEndDate" layoutX="316.0" layoutY="96.0" prefHeight="25.0" prefWidth="165.0" promptText="Enter End Date M/D/Y" style="-fx-background-color: white; -fx-border-color: #2B7A78; -fx-border-width: 2; -fx-border-radius: 5;" />
-               <Label layoutX="67.0" layoutY="79.0" prefHeight="17.0" prefWidth="200.0" text="CPU Threshold (0-100%)" />
-               <Label layoutX="67.0" layoutY="20.0" prefHeight="17.0" prefWidth="200.0" text="Memory Threshold (0-16 GB)" />
-               <Label layoutX="67.0" layoutY="136.0" prefHeight="17.0" prefWidth="200.0" text="Disk Threshold (0-1000 KB)" />
+               <Label layoutX="67.0" layoutY="79.0" prefHeight="17.0" prefWidth="200.0" text="CPU Threshold (1-100%)" />
+               <Label layoutX="67.0" layoutY="20.0" prefHeight="17.0" prefWidth="200.0" text="Memory Threshold (1-16 GB)" />
+               <Label layoutX="67.0" layoutY="136.0" prefHeight="17.0" prefWidth="200.0" text="Disk Threshold (1-1000 KB)" />
             </children>
             <VBox.margin>
                <Insets bottom="-5.0" />

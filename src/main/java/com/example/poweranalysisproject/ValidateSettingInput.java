@@ -31,7 +31,7 @@ public class ValidateSettingInput {
         try
         {
             int disk = Integer.parseInt(diskThreshold.getText());
-            if (disk < 0 || disk > 1000)
+            if (disk < 1 || disk > 1000)
                 valid = -1;
             else
                 valid = disk;
@@ -53,7 +53,7 @@ public class ValidateSettingInput {
         try
         {
             int mem = Integer.parseInt(memoryThreshold.getText());
-            if (mem < 0 || mem > 16)
+            if (mem < 1 || mem > 16)
                 valid = -1;
             else
                 valid = mem;
@@ -76,7 +76,7 @@ public class ValidateSettingInput {
         try
         {
             int cpu = Integer.parseInt(cpuThreshold.getText());
-            if (cpu < 0 || cpu > 100)
+            if (cpu < 1 || cpu > 100)
                 valid = -1;
             else
                 valid = cpu;
