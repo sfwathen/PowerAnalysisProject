@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
-public class DefaultSettingsController {
+public class DefaultSettingsController extends Controller{
     private int verifiedCPUThreshold;
     private int verifiedMemThreshold;
     private int verifiedDiskThreshold;
