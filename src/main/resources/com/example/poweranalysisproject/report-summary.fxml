@@ -15,7 +15,7 @@
 <VBox prefHeight="400" prefWidth="600" style="-fx-background-color: #A6DEDB#A6DEDB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.ReportSummaryController">
    <HBox prefHeight="10.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
       <children>
-         <Label prefHeight="15.0" prefWidth="626.0" text="    Home  &gt;  View Reports &gt; Report Summary" textFill="WHITE">
+         <Label prefHeight="15.0" prefWidth="626.0" text="    Home  &gt;  View Reports  &gt;  Report Summary" textFill="WHITE">
             <font>
                <Font size="10.0" />
             </font>
