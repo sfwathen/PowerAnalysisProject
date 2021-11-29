@@ -42,6 +42,7 @@ public class Main extends Application {
     public static void navigateToNewPage(String pageName, Report newCurrReport) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(pageName + ".fxml"));
         String name = toUpperCase(pageName.replace('-', ' '));
+        ProjectStateSingleton.getInstance().setCurrReport(newCurrReport);
         Scene scene = new Scene(fxmlLoader.load(), WIDTH, HEIGHT);
         stage.setTitle(name);
         stage.setScene(scene);
