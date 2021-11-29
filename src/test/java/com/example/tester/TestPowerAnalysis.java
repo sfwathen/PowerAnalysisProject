@@ -91,8 +91,11 @@ public class TestPowerAnalysis {
         assertEquals(threshold.getMemThreshold(), 48);
     }
 
-
-
-
+    @Test
+    public void testFormatID() {
+        int testID = 1;
+        String formatted_id = Report.formatID(testID);
+        assertEquals("000001",formatted_id);
+    }
 
 }
