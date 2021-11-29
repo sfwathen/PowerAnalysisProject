@@ -7,10 +7,18 @@ import javafx.scene.control.TextField;
 import org.junit.Test;
 import javafx.scene.control.TextField;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPowerAnalysis {
+
+    final String BUILDING_5 = "Building 5";
+    final String BUILDING_6 = "Building 6";
+    final String BUILDING_7 = "Building 5";
+    final String MATTEO_NAME = "Matteo";
+    final String ROOM_3 = "Room 3";
+    final String ROOM_5 = "Room 5";
+    final String ROOM_6 = "Room 6";
+    final String EE = "EE";
 
     @Test
     public void loopOneCheckTitleConverter()
@@ -31,43 +39,46 @@ public class TestPowerAnalysis {
     {
         Threshold threshold = new Threshold(11,79, 33);
         Report reportOne = new Report(null, null, null, null,
-                false, threshold, new UserProfile("Matteo", "Building 5", "Room 3", "SW"));
+                false, threshold, new UserProfile(MATTEO_NAME, BUILDING_5, ROOM_3, "SW"));
         Report reportTwo = new Report(null, null, null, null,
-                false, threshold, new UserProfile("MatteoOne", "Building 6", "Room 5", "CPE"));
+                false, threshold, new UserProfile("MatteoOne", BUILDING_6, ROOM_5, "CPE"));
         Report reportThree = new Report(null, null, null, null,
-                false, threshold, new UserProfile("MatteoTwo", "Building 6", "Room 6", "EE"));
+                false, threshold, new UserProfile("MatteoTwo", BUILDING_6, ROOM_6, EE));
 
         assertEquals(4, Report.getId());
+        assertNotEquals(reportOne, reportTwo);
+        assertNotEquals(reportTwo, reportThree);
+        assertNotEquals(reportOne, reportThree);
     }
 
     @Test
     public void testUserProfileName()
     {
-        UserProfile user = new UserProfile("Matteo", "Building 5", "Room 3", "SW");
-        assertEquals(user.getName(), "Matteo");
+        UserProfile user = new UserProfile(MATTEO_NAME, BUILDING_5, ROOM_3, "SW");
+        assertEquals(user.getName(), MATTEO_NAME);
     }
 
     @Test
     public void testUserProfileBuilding()
     {
-        UserProfile user = new UserProfile("Davide", "Building 6", "Room 9", "CPE");
-        user.setBuilding("Building 7");
-        assertEquals(user.getBuilding(), "Building 7");
+        UserProfile user = new UserProfile("Davide", BUILDING_6, "Room 9", "CPE");
+        user.setBuilding(BUILDING_7);
+        assertEquals(user.getBuilding(), BUILDING_7);
     }
 
     @Test
     public void testUserProfileRoom()
     {
-        UserProfile user = new UserProfile("Matteo1", "Building 7", "Room 6", "CS");
-        assertEquals(user.getRoom(), "Room 6");
+        UserProfile user = new UserProfile(MATTEO_NAME, BUILDING_7, ROOM_6, "CS");
+        assertEquals(user.getRoom(), ROOM_6);
     }
 
     @Test
     public void testUserProfileDepartment()
     {
-        UserProfile user = new UserProfile("Davide1", "Building 5", "Room 3", "EE");
-        user.setDepartment("EE");
-        assertEquals(user.getDepartment(), "EE");
+        UserProfile user = new UserProfile("Davide1", BUILDING_5, ROOM_3, EE);
+        user.setDepartment(EE);
+        assertEquals(user.getDepartment(), EE);
     }
 
     @Test
@@ -94,8 +105,8 @@ public class TestPowerAnalysis {
     @Test
     public void testFormatID() {
         int testID = 1;
-        String formatted_id = Report.formatID(testID);
-        assertEquals("000001",formatted_id);
+        String formattedID = Report.formatID(testID);
+        assertEquals("000001",formattedID);
     }
 
 }
