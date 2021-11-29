@@ -48,8 +48,8 @@ public class Report {
         singleton.addToReportSummaryUser(userProfile);
     }
 
-    public static String formatID(int id_num) {
-        String res = String.format("%06d", id_num);
+    public static String formatID(int idNum) {
+        String res = String.format("%06d", idNum);
         id++;
         return res;
     }

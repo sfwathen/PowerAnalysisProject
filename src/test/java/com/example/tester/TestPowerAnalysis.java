@@ -1,6 +1,5 @@
 package com.example.tester;
 
-
 import com.example.poweranalysisproject.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -11,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TestPowerAnalysis {
 
-    final String BUILDING_5 = "Building 5";
-    final String BUILDING_6 = "Building 6";
-    final String BUILDING_7 = "Building 5";
-    final String MATTEO_NAME = "Matteo";
-    final String ROOM_3 = "Room 3";
-    final String ROOM_5 = "Room 5";
-    final String ROOM_6 = "Room 6";
-    final String EE = "EE";
+    final static String building5 = "Building 5";
+    final static String building6 = "Building 6";
+    final static String building7 = "Building 7";
+    final static String matteoName = "Matteo";
+    final static String room3 = "Room 3";
+    final static String room5 = "Room 5";
+    final static String room6 = "Room 6";
+    final static String eeDepartment = "ee";
 
     @Test
     public void loopOneCheckTitleConverter()
@@ -39,46 +38,49 @@ public class TestPowerAnalysis {
     {
         Threshold threshold = new Threshold(11,79, 33);
         Report reportOne = new Report(null, null, null, null,
-                false, threshold, new UserProfile(MATTEO_NAME, BUILDING_5, ROOM_3, "SW"));
+                false, threshold, new UserProfile(matteoName, building5, room3
+                , "SW"));
         Report reportTwo = new Report(null, null, null, null,
-                false, threshold, new UserProfile("MatteoOne", BUILDING_6, ROOM_5, "CPE"));
-        Report reportThree = new Report(null, null, null, null,
-                false, threshold, new UserProfile("MatteoTwo", BUILDING_6, ROOM_6, EE));
+                false, threshold, new UserProfile("MatteoOne", building6, room5, "CPE"));
+        Report reportThreeDepartment = new Report(null, null, null, null,
+                false, threshold, new UserProfile("MatteoTwo", building6, room6, eeDepartment));
 
         assertEquals(4, Report.getId());
         assertNotEquals(reportOne, reportTwo);
-        assertNotEquals(reportTwo, reportThree);
-        assertNotEquals(reportOne, reportThree);
+        assertNotEquals(reportTwo, reportThreeDepartment);
+        assertNotEquals(reportOne, reportThreeDepartment);
     }
 
     @Test
     public void testUserProfileName()
     {
-        UserProfile user = new UserProfile(MATTEO_NAME, BUILDING_5, ROOM_3, "SW");
-        assertEquals(user.getName(), MATTEO_NAME);
+        UserProfile user = new UserProfile(matteoName, building5, room3
+                , "SW");
+        assertEquals(user.getName(), matteoName);
     }
 
     @Test
     public void testUserProfileBuilding()
     {
-        UserProfile user = new UserProfile("Davide", BUILDING_6, "Room 9", "CPE");
-        user.setBuilding(BUILDING_7);
-        assertEquals(user.getBuilding(), BUILDING_7);
+        UserProfile user = new UserProfile("Davide", building6, "Room 9", eeDepartment);
+        user.setBuilding(building7);
+        assertEquals(user.getBuilding(), building7);
     }
 
     @Test
     public void testUserProfileRoom()
     {
-        UserProfile user = new UserProfile(MATTEO_NAME, BUILDING_7, ROOM_6, "CS");
-        assertEquals(user.getRoom(), ROOM_6);
+        UserProfile user = new UserProfile(matteoName, building7, room6, "CS");
+        assertEquals(user.getRoom(), room6);
     }
 
     @Test
     public void testUserProfileDepartment()
     {
-        UserProfile user = new UserProfile("Davide1", BUILDING_5, ROOM_3, EE);
-        user.setDepartment(EE);
-        assertEquals(user.getDepartment(), EE);
+        UserProfile user = new UserProfile("Davide1", building5, room3
+                , eeDepartment);
+        user.setDepartment(eeDepartment);
+        assertEquals(user.getDepartment(), eeDepartment);
     }
 
     @Test
