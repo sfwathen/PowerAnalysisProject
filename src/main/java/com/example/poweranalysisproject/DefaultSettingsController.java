@@ -7,9 +7,6 @@ import javafx.scene.control.TextField;
 import java.io.IOException;
 
 public class DefaultSettingsController extends Controller{
-    private int verifiedCPUThreshold;
-    private int verifiedMemThreshold;
-    private int verifiedDiskThreshold;
 
     @FXML
     private TextField cpuThreshold;
@@ -39,19 +36,13 @@ public class DefaultSettingsController extends Controller{
     protected void goToSettings() throws IOException {
         Main.navigateToNewPage("default-settings");
     }
+
     @FXML
     protected void saveThresholds() throws IOException {
 
-        int cpuValid = ValidateSettingInput.validateCPUThreshold(cpuThreshold);
-        int memValid = ValidateSettingInput.validateMemThreshold(memoryThreshold);
-        int diskValid = ValidateSettingInput.validateDiskThreshold(diskThreshold);
-
-        if (cpuValid > 0 && memValid > 0 && diskValid > 0) {
-            verifiedDiskThreshold = diskValid;
-            verifiedMemThreshold = memValid;
-            verifiedCPUThreshold = cpuValid;
-
-            Threshold threshold = new Threshold(verifiedCPUThreshold, verifiedDiskThreshold, verifiedMemThreshold);
+        Threshold threshold = ValidateSettingInput.validateSettings(cpuThreshold, memoryThreshold, diskThreshold);
+        if (threshold != null)
+        {
             ProjectStateSingleton.getInstance().setDefaultThreshold(threshold);
         }
     }

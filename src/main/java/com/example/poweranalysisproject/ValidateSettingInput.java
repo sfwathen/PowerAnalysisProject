@@ -6,7 +6,22 @@ public class ValidateSettingInput {
 
     private static final String inValid = "Not Valid!";
 
-    public static int validateDiskThreshold(TextField diskThreshold) {
+    public static Threshold validateSettings(TextField cpuThreshold, TextField memoryThreshold, TextField diskThreshold) {
+        int cpuValid = validateCPUThreshold(cpuThreshold);
+        int memValid = validateMemThreshold(memoryThreshold);
+        int diskValid = validateDiskThreshold(diskThreshold);
+
+        Threshold threshold = null;
+
+        if (cpuValid > 0 && memValid > 0 && diskValid > 0) {
+
+            threshold = new Threshold(cpuValid, diskValid, memValid);
+        }
+
+        return threshold;
+    }
+
+    private static int validateDiskThreshold(TextField diskThreshold) {
         int valid;
 
         try
@@ -28,7 +43,7 @@ public class ValidateSettingInput {
         return valid;
     }
 
-    public static int validateMemThreshold(TextField memoryThreshold) {
+    private static int validateMemThreshold(TextField memoryThreshold) {
         int valid;
 
         try
@@ -50,7 +65,7 @@ public class ValidateSettingInput {
         return valid;
     }
 
-    public static int validateCPUThreshold(TextField cpuThreshold) {
+    private static int validateCPUThreshold(TextField cpuThreshold) {
 
         int valid;
 
