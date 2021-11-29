@@ -6,6 +6,10 @@ public class ValidateSettingInput {
 
     private static final String INVALID = "Not Valid!";
 
+    private ValidateSettingInput() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static Threshold validateSettings(TextField cpuThreshold, TextField memoryThreshold, TextField diskThreshold) {
         int cpuValid = validateCPUThreshold(cpuThreshold);
         int memValid = validateMemThreshold(memoryThreshold);
@@ -38,7 +42,7 @@ public class ValidateSettingInput {
         }
 
         if (valid < 0)
-            diskThreshold.setText(inValid);
+            diskThreshold.setText(INVALID);
 
         return valid;
     }
@@ -60,7 +64,7 @@ public class ValidateSettingInput {
         }
 
         if (valid < 0)
-            memoryThreshold.setText(inValid);
+            memoryThreshold.setText(INVALID);
 
         return valid;
     }
@@ -83,7 +87,7 @@ public class ValidateSettingInput {
         }
 
         if (valid < 0)
-            cpuThreshold.setText(inValid);
+            cpuThreshold.setText(INVALID);
 
         return valid;
     }
