@@ -83,7 +83,7 @@ public class ValidateSettingInput {
         }
 
         if (valid < 0)
-            cpuThreshold.setText("Not Valid!");
+            cpuThreshold.setText(inValid);
 
         return valid;
     }
