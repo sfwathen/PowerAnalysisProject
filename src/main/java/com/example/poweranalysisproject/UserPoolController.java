@@ -2,6 +2,7 @@ package com.example.poweranalysisproject;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -39,11 +40,7 @@ public class UserPoolController extends Controller implements Initializable {
             new UserProfile("Sam", "10A", "5", "CS"),
             new UserProfile("Ricardo", "10A", "5", "CS"),
             new UserProfile("Davide", "10A", "5", "CS")
-
-
-
     );
-
 
     @FXML
     protected void goBack() throws IOException {
@@ -56,15 +53,20 @@ public class UserPoolController extends Controller implements Initializable {
     }
 
     @FXML
-    protected void beginAnalysis() throws IOException {
-        Main.navigateToNewPage("power-analysis-active");
+    protected void logOut() throws IOException {
+        Main.navigateToNewPage("log-in");
+    }
+
+    @FXML
+    protected void beginAnalysis() throws IOException, InterruptedException {
+
+        Main.navigateToNewPage("power-analysis-active", ProjectStateSingleton.getInstance().getDefaultUserProfile());
     }
 
     @FXML
     void handleRowClick(MouseEvent event) throws IOException, InterruptedException {
         UserProfile user = table.getSelectionModel().getSelectedItem();
         if (event.getClickCount() == 2 && user != null) {
-            System.out.println(user.getName());
             Main.navigateToNewPage("power-analysis-active", user);
         }
     }

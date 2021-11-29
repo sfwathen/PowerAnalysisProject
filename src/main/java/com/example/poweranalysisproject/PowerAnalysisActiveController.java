@@ -96,7 +96,7 @@ public class PowerAnalysisActiveController extends Controller{
     @FXML
     public void updateData(String input)
     {
-        int curCPU = (int)(randomNums.nextGaussian() * 18) + 30;
+        int curCPU = (int)(randomNums.nextGaussian() * 16) + 40;
         if (curCPU > 100 || curCPU < 0)
             curCPU = 100 - Math.abs(curCPU);
         if (curCPU > highCPU)
@@ -154,6 +154,11 @@ public class PowerAnalysisActiveController extends Controller{
         Main.navigateToNewPage("power-analysis-active");
     }
 
+    @FXML
+    protected void logOut() throws IOException {
+        Main.navigateToNewPage("log-in");
+    }
+
     public void endAnalysis(ActionEvent actionEvent) {
         try {
             if (highCPU > currentThreshold.getCpuThreshold() || highDisk > currentThreshold.getDiskThreshold()
@@ -177,7 +182,6 @@ public class PowerAnalysisActiveController extends Controller{
         Main.navigateToNewPage("default-settings");
     }
 
-
     public void startDataCollection() {
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
@@ -187,6 +191,4 @@ public class PowerAnalysisActiveController extends Controller{
             }
         }, 0,1000);
     }
-
-
 }

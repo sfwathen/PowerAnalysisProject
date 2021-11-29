@@ -2,6 +2,7 @@ package com.example.poweranalysisproject;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -75,6 +76,10 @@ public class ReportSummaryController extends Controller implements Initializable
         Main.navigateToNewPage("default-settings");
     }
 
+    @FXML
+    protected void logOut() throws IOException {
+        Main.navigateToNewPage("log-in");
+    }
 
     public void updateReportSummaryMetrics() {
         Report currReport = ProjectStateSingleton.getInstance().getCurrReport();
@@ -102,8 +107,4 @@ public class ReportSummaryController extends Controller implements Initializable
         reportTable.setItems(singleton.getReportList());
 
     }
-
-
-
-
 }
