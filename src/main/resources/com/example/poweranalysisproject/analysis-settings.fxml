@@ -40,7 +40,7 @@
          <Insets />
       </VBox.margin>
    </HBox>
-   <VBox prefHeight="57.0" prefWidth="600.0" style="-fx-background-color: white;" />
+   <VBox prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: white;" />
    <ToolBar prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
       <items>
          <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />
