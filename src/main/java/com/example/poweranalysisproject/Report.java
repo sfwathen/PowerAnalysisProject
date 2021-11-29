@@ -5,9 +5,6 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-import java.util.Random;
-
-//import java.util.Random;
 
 public class Report {
 
@@ -20,7 +17,6 @@ public class Report {
     private final SimpleDoubleProperty cpuTreshold;
     private final SimpleDoubleProperty diskTreshold;
 
-    private SimpleStringProperty userName;
     private SimpleDoubleProperty avgMem;
     private SimpleDoubleProperty avgCPU;
     private SimpleDoubleProperty avgDisk;
@@ -43,7 +39,7 @@ public class Report {
         this.reportEndDate = new SimpleStringProperty(reportEndDate);
         this.reportSupervisor = new SimpleStringProperty(reportSupervisor);
 
-        this.userName = new SimpleStringProperty(userName);
+
         if (flagged)
             this.flagged = new SimpleStringProperty("True");
         else

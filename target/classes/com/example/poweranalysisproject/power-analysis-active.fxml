@@ -11,6 +11,30 @@
 <?import javafx.scene.text.Text?>
 
 <VBox prefHeight="400" prefWidth="600" style="-fx-background-color: #A6DEDB;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.PowerAnalysisActiveController">
+   <HBox prefHeight="10.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
+      <children>
+         <Label prefHeight="15.0" prefWidth="626.0" text="    Home (Active) " textFill="WHITE">
+            <font>
+               <Font size="10.0" />
+            </font>
+            <padding>
+               <Insets top="1.0" />
+            </padding>
+         </Label>
+         <Label prefHeight="15.0" prefWidth="303.0" text="Signed in as Privileged User" textFill="WHITE">
+            <font>
+               <Font size="10.0" />
+            </font>
+            <padding>
+               <Insets top="2.0" />
+            </padding>
+         </Label>
+      </children>
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+   </HBox>
+   <VBox prefHeight="55.0" prefWidth="600.0" style="-fx-background-color: white;" />
    <ToolBar prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
       <items>
          <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />

@@ -9,7 +9,7 @@ public class UserProfile {
     private SimpleStringProperty Room;
     private SimpleStringProperty Department;
 
-    public UserProfile(String name, String building, String room, String department){//, String selected) {
+    public UserProfile(String name, String building, String room, String department){
         this.Name = new SimpleStringProperty(name);
         this.Building = new SimpleStringProperty(building);
         this.Room = new SimpleStringProperty(room);
