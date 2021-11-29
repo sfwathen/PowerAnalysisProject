@@ -51,7 +51,7 @@
             </Text>
         </items>
     </ToolBar>
-   <TableView fx:id="ViewReportsTable" onMouseClicked="#handleRowClick" prefHeight="351.0" prefWidth="566.0">
+   <TableView fx:id="viewReportsTable" onMouseClicked="#handleRowClick" prefHeight="351.0" prefWidth="566.0">
      <columns>
        <TableColumn fx:id="reportIDColumn" prefWidth="153.0430088043213" style="filler: white;" text="Report ID" />
        <TableColumn fx:id="startDateColumn" prefWidth="150.00003051757812" text="Start Date" />

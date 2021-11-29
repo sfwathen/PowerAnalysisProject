@@ -6,24 +6,14 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class ReportSummaryUser {
     private SimpleStringProperty userName;
-    private SimpleDoubleProperty highMem;
-    private SimpleDoubleProperty avgMem;
-    private SimpleDoubleProperty highCpu;
-    private SimpleDoubleProperty avgCpu;
-    private SimpleDoubleProperty highDisk;
-    private SimpleDoubleProperty avgDisk;
+    private UsageMetrics metrics;
     private SimpleStringProperty userFlagged;
 
 
 
-    public ReportSummaryUser(SimpleStringProperty userName, SimpleDoubleProperty highMem, SimpleDoubleProperty avgMem, SimpleDoubleProperty highCpu, SimpleDoubleProperty avgCpu, SimpleDoubleProperty highDisk, SimpleDoubleProperty avgDisk, SimpleStringProperty userFlagged) {
+    public ReportSummaryUser(SimpleStringProperty userName, UsageMetrics metrics, SimpleStringProperty userFlagged) {
         this.userName = userName;
-        this.highMem = highMem;
-        this.avgMem = avgMem;
-        this.highCpu = highCpu;
-        this.avgCpu = avgCpu;
-        this.highDisk = highDisk;
-        this.avgDisk = avgDisk;
+        this.metrics = metrics;
         this.userFlagged = userFlagged;
     }
 
@@ -40,75 +30,71 @@ public class ReportSummaryUser {
     }
 
     public double getHighMem() {
-        return highMem.get();
-    }
-
-    public SimpleDoubleProperty highMemProperty() {
-        return highMem;
+        return this.metrics.getHighMem();
     }
 
     public void setHighMem(double highMem) {
-        this.highMem.set(highMem);
+        this.metrics.setHighMem(highMem);
     }
 
     public double getAvgMem() {
-        return avgMem.get();
+        return this.metrics.getAvgMem();
     }
 
     public SimpleDoubleProperty avgMemProperty() {
-        return avgMem;
+        return this.metrics.avgMemProperty();
     }
 
     public void setAvgMem(double avgMem) {
-        this.avgMem.set(avgMem);
+        this.metrics.setAvgMem(avgMem);
     }
 
     public double getHighCpu() {
-        return highCpu.get();
+        return this.metrics.getHighCpu();
     }
 
     public SimpleDoubleProperty highCpuProperty() {
-        return highCpu;
+        return this.metrics.highCpuProperty();
     }
 
     public void setHighCpu(double highCpu) {
-        this.highCpu.set(highCpu);
+        this.metrics.setHighCpu(highCpu);
     }
 
     public double getAvgCpu() {
-        return avgCpu.get();
+        return this.metrics.getAvgCpu();
     }
 
     public SimpleDoubleProperty avgCpuProperty() {
-        return avgCpu;
+        return this.metrics.avgCpuProperty();
     }
 
     public void setAvgCpu(double avgCpu) {
-        this.avgCpu.set(avgCpu);
+        this.metrics.setAvgCpu(avgCpu);
     }
 
     public double getHighDisk() {
-        return highDisk.get();
+        return this.metrics.getHighDisk();
     }
 
     public SimpleDoubleProperty highDiskProperty() {
-        return highDisk;
+        return this.metrics.highDiskProperty();
     }
 
     public void setHighDisk(double highDisk) {
-        this.highDisk.set(highDisk);
+        this.metrics.setHighDisk(highDisk);
     }
 
     public double getAvgDisk() {
-        return avgDisk.get();
+        return this.metrics.getAvgDisk();
     }
 
     public SimpleDoubleProperty avgDiskProperty() {
-        return avgDisk;
+        return this.metrics.avgDiskProperty();
     }
 
     public void setAvgDisk(double avgDisk) {
-        this.avgDisk.set(avgDisk);
+        this.metrics.setAvgDisk(avgDisk);
     }
 
     public String getUserFlagged() {

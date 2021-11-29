@@ -2,7 +2,6 @@ package com.example.poweranalysisproject;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -16,21 +15,30 @@ import java.util.ResourceBundle;
 
 public class UserPoolController extends Controller implements Initializable {
 
-    public TableView<UserProfile> table;
+    @FXML
+    protected TableView<UserProfile> table;
 
-    public TableColumn<UserProfile, String> Name;
-    public TableColumn<UserProfile, String> Building;
-    public TableColumn<UserProfile, String> Room;
-    public TableColumn<UserProfile, String> Department;
-    public TableColumn<UserProfile, String> Selected;
+    @FXML
+    protected TableColumn<UserProfile, String> name;
+
+    @FXML
+    protected TableColumn<UserProfile, String> building;
+
+    @FXML
+    protected TableColumn<UserProfile, String> room;
+
+    @FXML
+    protected TableColumn<UserProfile, String> department;
+
+    @FXML
+    protected TableColumn<UserProfile, String> selected;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Name.setCellValueFactory(new PropertyValueFactory<>("Name"));
-        Building.setCellValueFactory(new PropertyValueFactory<>("Building"));
-        Room.setCellValueFactory(new PropertyValueFactory<>("Room"));
-        Department.setCellValueFactory(new PropertyValueFactory<>("Department"));
-        //Selected.setCellValueFactory(new PropertyValueFactory<>("Selected"));
+        name.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        building.setCellValueFactory(new PropertyValueFactory<>("Building"));
+        room.setCellValueFactory(new PropertyValueFactory<>("Room"));
+        department.setCellValueFactory(new PropertyValueFactory<>("Department"));
         table.setItems(observableList);
     }
 

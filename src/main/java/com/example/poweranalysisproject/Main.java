@@ -65,10 +65,6 @@ public class Main extends Application {
         stage.setResizable(false);
         stage.show();
 
-        PowerAnalysisActiveController controller = fxmlLoader.getController();
-
-        stage.show();
-
     }
 
     public static String toUpperCase(String name)
