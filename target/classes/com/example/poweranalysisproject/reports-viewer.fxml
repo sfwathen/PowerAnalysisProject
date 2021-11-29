@@ -10,14 +10,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 <VBox prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poweranalysisproject.ReportsViewerController">
 
-    <ToolBar prefHeight="40.0" prefWidth="600.0">
+    <ToolBar prefHeight="0.0" prefWidth="600.0" style="-fx-background-color: #2B7A78;">
         <items>
             <Button id="home-btn" mnemonicParsing="false" onAction="#goHome" text="Home" />
             <Button id="settings-btn" mnemonicParsing="false" onAction="#goToSettings" text="Default Settings" />
             <Button id="reports-btn" mnemonicParsing="false" onAction="#viewReports" text="View Reports" />
             <Button id="log-out-btn" mnemonicParsing="false" text="Log Out" />
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Matteo Inc." textAlignment="CENTER" wrappingWidth="159.68549823760986">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Text>
         </items>
     </ToolBar>
 
@@ -28,7 +35,7 @@
       <children>
          <Pane prefHeight="444.0" prefWidth="560.0">
             <children>
-               <TableView fx:id="ViewReportsTable" layoutX="-23.0" layoutY="-3.0" onMouseClicked="#handleRowClick" prefHeight="330.0" prefWidth="603.0">
+               <TableView fx:id="ViewReportsTable" layoutX="-23.0" layoutY="-3.0" onMouseClicked="#handleRowClick" prefHeight="330.0" prefWidth="603.0" style="-fx-background-color: #A6DEDB#A6DEDB;">
                  <columns>
                    <TableColumn fx:id="reportIDColumn" prefWidth="153.0430088043213" text="Report ID" />
                    <TableColumn fx:id="startDateColumn" prefWidth="150.00003051757812" text="Start Date" />
