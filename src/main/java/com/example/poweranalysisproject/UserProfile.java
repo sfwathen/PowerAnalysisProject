@@ -4,48 +4,48 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class UserProfile {
 
-    private SimpleStringProperty Name;
-    private SimpleStringProperty Building;
-    private SimpleStringProperty Room;
-    private SimpleStringProperty Department;
+    private SimpleStringProperty name;
+    private SimpleStringProperty building;
+    private SimpleStringProperty room;
+    private SimpleStringProperty department;
 
     public UserProfile(String name, String building, String room, String department){
-        this.Name = new SimpleStringProperty(name);
-        this.Building = new SimpleStringProperty(building);
-        this.Room = new SimpleStringProperty(room);
-        this.Department = new SimpleStringProperty(department);
+        this.name = new SimpleStringProperty(name);
+        this.building = new SimpleStringProperty(building);
+        this.room = new SimpleStringProperty(room);
+        this.department = new SimpleStringProperty(department);
     }
 
     public String getName() {
-        return Name.get();
+        return name.get();
     }
 
     public void setName(String name) {
-        this.Name = new SimpleStringProperty(name);
+        this.name = new SimpleStringProperty(name);
     }
 
     public String getBuilding() {
-        return Building.get();
+        return building.get();
     }
 
     public void setBuilding(String building) {
-        this.Building = new SimpleStringProperty(building);
+        this.building = new SimpleStringProperty(building);
     }
 
     public String getRoom() {
-        return Room.get();
+        return room.get();
     }
 
     public void setRoom(String room) {
-        this.Room = new SimpleStringProperty(room);
+        this.room = new SimpleStringProperty(room);
     }
 
     public String getDepartment() {
-        return Department.get();
+        return department.get();
     }
 
     public void setDepartment(String department) {
-        this.Department = new SimpleStringProperty(department);
+        this.department = new SimpleStringProperty(department);
     }
 
 
