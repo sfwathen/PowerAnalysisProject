@@ -14,6 +14,8 @@ public class AnalysisSettingsController extends Controller{
     private int verifiedMemThreshold;
     private int verifiedDiskThreshold;
 
+    private final String inValid = "Not Valid!";
+
     @FXML
     private TextField cpuThreshold;
 
@@ -87,7 +89,7 @@ public class AnalysisSettingsController extends Controller{
         }
 
         if (!valid)
-            diskThreshold.setText("Not Valid!");
+            diskThreshold.setText(inValid);
 
         return valid;
     }
@@ -111,7 +113,7 @@ public class AnalysisSettingsController extends Controller{
         }
 
         if (!valid)
-            memoryThreshold.setText("Not Valid!");
+            memoryThreshold.setText(inValid);
 
         return valid;
     }
@@ -136,7 +138,7 @@ public class AnalysisSettingsController extends Controller{
         }
 
         if (!valid)
-            cpuThreshold.setText("Not Valid!");
+            cpuThreshold.setText(inValid);
 
         return valid;
     }
