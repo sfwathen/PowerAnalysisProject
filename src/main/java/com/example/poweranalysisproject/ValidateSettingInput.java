@@ -4,7 +4,7 @@ import javafx.scene.control.TextField;
 
 public class ValidateSettingInput {
 
-    private static final String inValid = "Not Valid!";
+    private static final String INVALID = "Not Valid!";
 
     public static Threshold validateSettings(TextField cpuThreshold, TextField memoryThreshold, TextField diskThreshold) {
         int cpuValid = validateCPUThreshold(cpuThreshold);
