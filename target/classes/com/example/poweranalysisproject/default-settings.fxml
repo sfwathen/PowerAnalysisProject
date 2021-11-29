@@ -13,7 +13,7 @@
             <Button id="home-btn" mnemonicParsing="false" onAction="#goToHomePage" text="Home" />
             <Button id="settings-btn" mnemonicParsing="false" onAction="#goToSettings" text="Default Settings" />
             <Button id="reports-btn" mnemonicParsing="false" onAction="#goToReportViewer" text="View Reports" />
-            <Button id="log-out-btn" mnemonicParsing="false" onAction="#goToLoginPage" text="Log Out" />
+            <Button id="log-out-btn" mnemonicParsing="false" onAction="#logOut" text="Log Out" />
         </items>
     </ToolBar>
 

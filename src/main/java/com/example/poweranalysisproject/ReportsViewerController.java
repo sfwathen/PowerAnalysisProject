@@ -66,10 +66,10 @@ public class ReportsViewerController implements Initializable {
         if(event.getClickCount() == 2 && rowReport != null){
             Main.navigateToNewPage("report-summary", rowReport);
         }
-        //this is useless
     }
 
     @FXML
     void viewReports(ActionEvent event) {
+        //this is useless
     }
 }
