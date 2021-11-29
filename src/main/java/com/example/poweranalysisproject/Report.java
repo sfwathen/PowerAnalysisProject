@@ -38,7 +38,7 @@ public class Report {
     public Report(String reportStartDate, String reportEndDate, String reportSupervisor,
                   String userName, int avgMem, int avgCPU, int avgDisk, int highMem, int highCPU, int highDisk,
                   boolean flagged, Threshold threshold, UserProfile user) {
-        this.reportID = new SimpleStringProperty(id++ + "");
+        this.reportID = new SimpleStringProperty(String.format("%06d", id++));
         this.reportStartDate = new SimpleStringProperty(reportStartDate);
         this.reportEndDate = new SimpleStringProperty(reportEndDate);
         this.reportSupervisor = new SimpleStringProperty(reportSupervisor);
@@ -64,12 +64,6 @@ public class Report {
         ReportSummaryUser userProfile = new ReportSummaryUser(new SimpleStringProperty(user.getName())
                 ,this.highCPU, this.avgCPU, this.highMem, this.avgMem, this.highDisk, this.avgDisk, this.flagged);
         singleton.addToReportSummaryUser(userProfile);
-    }
-
-
-    public SimpleStringProperty generateID(){
-        int rnd = new Random().nextInt(999999);;
-        return new SimpleStringProperty(String.format("%06d", rnd));
     }
 
     public String getReportID() {
