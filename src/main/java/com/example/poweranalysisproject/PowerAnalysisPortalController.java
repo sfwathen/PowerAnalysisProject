@@ -1,5 +1,6 @@
 package com.example.poweranalysisproject;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 
@@ -35,5 +36,10 @@ public class PowerAnalysisPortalController extends Controller{
     @FXML
     protected void goToSettings() throws IOException {
         Main.navigateToNewPage("default-settings");
+    }
+
+    @FXML
+    protected void logOut() throws IOException {
+        Main.navigateToNewPage("log-in");
     }
 }
