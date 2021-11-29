@@ -1,7 +1,5 @@
 package com.example.poweranalysisproject;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,16 +11,15 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ReportsViewerController implements Initializable {
 
     @FXML
-    private ScrollBar ViewReportsScrollBar;
+    private ScrollBar viewReportsScrollBar;
 
     @FXML
-    private TableView<Report> ViewReportsTable;
+    private TableView<Report> viewReportsTable;
 
     @FXML
     private TableColumn<Report, String> endDateColumn;
@@ -57,12 +54,12 @@ public class ReportsViewerController implements Initializable {
         startDateColumn.setCellValueFactory(new PropertyValueFactory<>("ReportStartDate"));
         endDateColumn.setCellValueFactory(new PropertyValueFactory<>("ReportEndDate"));
         supervisorColumn.setCellValueFactory(new PropertyValueFactory<>("ReportSupervisor"));
-        ViewReportsTable.setItems(ProjectStateSingleton.getInstance().getReportsList());
+        viewReportsTable.setItems(ProjectStateSingleton.getInstance().getReportsList());
     }
 
     @FXML
     void handleRowClick(MouseEvent event) throws IOException {
-        Report rowReport = ViewReportsTable.getSelectionModel().getSelectedItem();
+        Report rowReport = viewReportsTable.getSelectionModel().getSelectedItem();
         if(event.getClickCount() == 2 && rowReport != null){
             Main.navigateToNewPage("report-summary", rowReport);
         }

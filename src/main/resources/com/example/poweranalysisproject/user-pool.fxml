@@ -52,10 +52,10 @@
    </ToolBar>
    <TableView fx:id="table" onMouseClicked="#handleRowClick" prefHeight="284.0" prefWidth="600.0">
      <columns>
-       <TableColumn fx:id="Name" prefWidth="167.0" text="Name" />
-       <TableColumn fx:id="Building" prefWidth="102.0" text="Building" />
-         <TableColumn fx:id="Room" prefWidth="98.0" text="Room" />
-         <TableColumn fx:id="Department" prefWidth="141.0" text="Department" />
+       <TableColumn fx:id="name" prefWidth="167.0" text="Name" />
+       <TableColumn fx:id="building" prefWidth="102.0" text="Building" />
+         <TableColumn fx:id="room" prefWidth="98.0" text="Room" />
+         <TableColumn fx:id="department" prefWidth="141.0" text="Department" />
      </columns>
    </TableView>
    <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: A6DEDB;">

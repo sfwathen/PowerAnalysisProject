@@ -41,7 +41,8 @@ public class ReportSummaryController extends Controller implements Initializable
     private TableColumn<ReportSummaryUser, String> colName;
 
 
-    public TableView<ReportSummaryUser> reportTable;
+    @FXML
+    protected TableView<ReportSummaryUser> reportTable;
 
     private ProjectStateSingleton singleton = ProjectStateSingleton.getInstance();
 

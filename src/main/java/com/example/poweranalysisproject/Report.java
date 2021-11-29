@@ -17,13 +17,7 @@ public class Report {
     private final SimpleDoubleProperty cpuTreshold;
     private final SimpleDoubleProperty diskTreshold;
 
-    private SimpleDoubleProperty avgMem;
-    private SimpleDoubleProperty avgCPU;
-    private SimpleDoubleProperty avgDisk;
-
-    private SimpleDoubleProperty highMem;
-    private SimpleDoubleProperty highCPU;
-    private SimpleDoubleProperty highDisk;
+    private UsageMetrics usageMetrics;
 
     private SimpleStringProperty flagged;
 
@@ -31,8 +25,7 @@ public class Report {
 
     private static int id = 1;
 
-    public Report(String reportStartDate, String reportEndDate, String reportSupervisor,
-                  String userName, int avgMem, int avgCPU, int avgDisk, int highMem, int highCPU, int highDisk,
+    public Report(String reportStartDate, String reportEndDate, String reportSupervisor, UsageMetrics usageMetrics,
                   boolean flagged, Threshold threshold, UserProfile user) {
         this.reportID = new SimpleStringProperty(String.format("%06d", id++));
         this.reportStartDate = new SimpleStringProperty(reportStartDate);
@@ -45,20 +38,13 @@ public class Report {
         else
             this.flagged = new SimpleStringProperty("False");
 
-        this.avgMem = new SimpleDoubleProperty(avgMem);
-        this.avgCPU = new SimpleDoubleProperty(avgCPU);
-        this.avgDisk = new SimpleDoubleProperty(avgDisk);
-
-        this.highMem = new SimpleDoubleProperty(highMem);
-        this.highCPU = new SimpleDoubleProperty(highCPU);
-        this.highDisk = new SimpleDoubleProperty(highDisk);
+        this.usageMetrics = usageMetrics;
 
         this.memoryTreshold = new SimpleDoubleProperty(threshold.getMemThreshold());
         this.cpuTreshold = new SimpleDoubleProperty(threshold.getCpuThreshold());
         this.diskTreshold = new SimpleDoubleProperty(threshold.getDiskThreshold());
 
-        ReportSummaryUser userProfile = new ReportSummaryUser(new SimpleStringProperty(user.getName())
-                ,this.highCPU, this.avgCPU, this.highMem, this.avgMem, this.highDisk, this.avgDisk, this.flagged);
+        ReportSummaryUser userProfile = new ReportSummaryUser(new SimpleStringProperty(user.getName()), this.usageMetrics, this.flagged);
         singleton.addToReportSummaryUser(userProfile);
     }
 

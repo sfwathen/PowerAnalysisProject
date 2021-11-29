@@ -1,6 +1,7 @@
 package com.example.poweranalysisproject;
 
 import javafx.application.Platform;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -159,22 +160,16 @@ public class PowerAnalysisActiveController extends Controller{
         Main.navigateToNewPage("log-in");
     }
 
-    public void endAnalysis(ActionEvent actionEvent) {
-        try {
-            if (highCPU > currentThreshold.getCpuThreshold() || highDisk > currentThreshold.getDiskThreshold()
-                    || highMem > currentThreshold.getMemThreshold())
-            {
-                flagged = true;
-            }
-
-            Report report = new Report(java.time.LocalDate.now().toString(), java.time.LocalDate.now().toString(), "Matteo",
-                    currentUser.getName(), avgMem, avgCPU, avgDisk, highMem, highCPU, highDisk, flagged, currentThreshold, currentUser);
-            singleton.addToReportsList(report);
-            Main.navigateToNewPage("power-analysis-portal");
-            //
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void endAnalysis() throws IOException {
+        if (highCPU > currentThreshold.getCpuThreshold() || highDisk > currentThreshold.getDiskThreshold()
+                || highMem > currentThreshold.getMemThreshold()) {
+            flagged = true;
         }
+
+        UsageMetrics usageMetrics = new UsageMetrics(new SimpleDoubleProperty(highMem), new SimpleDoubleProperty(avgMem), new SimpleDoubleProperty(highCPU), new SimpleDoubleProperty(avgCPU), new SimpleDoubleProperty(highDisk), new SimpleDoubleProperty(avgDisk));
+        Report report = new Report(java.time.LocalDate.now().toString(), java.time.LocalDate.now().toString(), "Matteo", usageMetrics, flagged, currentThreshold, currentUser);
+        singleton.addToReportsList(report);
+        Main.navigateToNewPage("power-analysis-portal");
     }
 
     @FXML
