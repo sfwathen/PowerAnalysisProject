@@ -1,0 +1,19 @@
+#home-btn {
+    -fx-graphic: url('./imgs/home.png');
+    -fx-background-color: white;
+}
+
+#settings-btn {
+    -fx-graphic: url('./imgs/settings.png');
+    -fx-background-color: white;
+}
+
+#reports-btn {
+    -fx-graphic: url("./imgs/list.png");
+    -fx-background-color: white;
+}
+
+#log-out-btn {
+    -fx-graphic: url("./imgs/log-out.png");
+    -fx-background-color: white;
+}
