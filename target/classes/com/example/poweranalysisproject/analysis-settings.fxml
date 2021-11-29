@@ -50,6 +50,7 @@
          </Pane>
       </children>
     </VBox>
+
     <HBox prefHeight="100.0" prefWidth="200.0">
         <children>
             <Button fx:id="backButton" mnemonicParsing="false" onAction="#goBack" prefHeight="39.0" prefWidth="182.0" text="Back">
@@ -62,6 +63,6 @@
     </HBox>
 
     <stylesheets>
-        <URL value="@navBar.css" />
+        <URL value="@styles/navBar.css" />
     </stylesheets>
 </VBox>

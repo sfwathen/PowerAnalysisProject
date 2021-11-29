@@ -3,6 +3,9 @@ package com.example.poweranalysisproject;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class ProjectStateSingleton {
     private static final ProjectStateSingleton psSingleton = new ProjectStateSingleton();
 
@@ -34,16 +37,15 @@ public class ProjectStateSingleton {
 
 
 
-    private ObservableList<ReportSummaryUser> reportList = FXCollections.observableArrayList(
-            //new ReportSummaryUser("Collin", 423.5, 2.43, 52.387, true)
+    private List<ObservableList<ReportSummaryUser>> reportList = FXCollections.observableArrayList(
     );
 
     public ObservableList<ReportSummaryUser> getReportList() {
-        return reportList;
+        return reportList.get(Integer.parseInt(currReport.getReportID()) - 1);
     }
 
     public void addToReportSummaryUser(ReportSummaryUser summaryUser) {
-        reportList.add(summaryUser);
+        reportList.add(FXCollections.observableArrayList(summaryUser));
     }
 
 
