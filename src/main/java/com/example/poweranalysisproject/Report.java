@@ -127,4 +127,8 @@ public class Report {
     public void setFlagged(String flagged) {
         this.flagged.set(flagged);
     }
+
+    public static int getId() {
+        return id;
+    }
 }
