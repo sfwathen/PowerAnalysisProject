@@ -134,7 +134,7 @@ public class PowerAnalysisActiveController extends Controller{
         if (count < 60)
             Platform.runLater(() -> activeTime.setText("Active for " + count + " seconds"));
         else
-            Platform.runLater(() -> activeTime.setText("Active for " + count / 60 + " minutes"));
+            Platform.runLater(() -> activeTime.setText("Active for " + count / 60 + " minute(s)"));
 
     }
 

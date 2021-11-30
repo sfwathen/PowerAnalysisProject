@@ -33,7 +33,7 @@ public class ValidateSettingInput {
         return threshold;
     }
 
-    private static int validateDiskThreshold(String  diskThreshold) {
+    public static int validateDiskThreshold(String  diskThreshold) {
         int valid;
 
         try
@@ -52,7 +52,7 @@ public class ValidateSettingInput {
         return valid;
     }
 
-    private static int validateMemThreshold(String memoryThreshold) {
+    public static int validateMemThreshold(String memoryThreshold) {
 
         int valid;
         try
@@ -71,7 +71,7 @@ public class ValidateSettingInput {
         return valid;
     }
 
-    private static int validateCPUThreshold(String cpuThreshold) {
+    public static int validateCPUThreshold(String cpuThreshold) {
 
         int valid;
         try

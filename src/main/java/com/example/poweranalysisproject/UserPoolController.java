@@ -43,11 +43,11 @@ public class UserPoolController extends Controller implements Initializable {
     }
 
     ObservableList<UserProfile> observableList = FXCollections.observableArrayList(
-               new UserProfile("Collin", "10A", "5", "CS"),
-            new UserProfile("Noah", "10A", "5", "CS"),
-            new UserProfile("Sam", "10A", "5", "CS"),
-            new UserProfile("Ricardo", "10A", "5", "CS"),
-            new UserProfile("Davide", "10A", "5", "CS")
+               new UserProfile("Collin", "10A", "5", "CPE"),
+            new UserProfile("Noah", "15C", "10", "SW"),
+            new UserProfile("Sam", "5B", "4", "CS"),
+            new UserProfile("Ricardo", "22A", "11", "CS"),
+            new UserProfile("Davide", "1E", "1", "CSE")
     );
 
     @FXML

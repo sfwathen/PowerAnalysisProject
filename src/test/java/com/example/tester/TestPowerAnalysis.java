@@ -38,24 +38,14 @@ public class TestPowerAnalysis {
     {
         Threshold threshold = new Threshold(11,79, 33);
         Report.setId(1);
+
         for (int i = 0; i < 3; i++)
         {
             new Report(null, null, null, null,
                     false, threshold, new UserProfile(MATTEONAME, BUILDING5, ROOM3
                     , "SW"));
         }
-//        Report reportOne = new Report(null, null, null, null,
-//                false, threshold, new UserProfile(MATTEONAME, BUILDING5, ROOM3
-//                , "SW"));
-//        Report reportTwo = new Report(null, null, null, null,
-//                false, threshold, new UserProfile("MatteoOne", BUILDING6, ROOM5, "CPE"));
-//        Report reportThrEE = new Report(null, null, null, null,
-//                false, threshold, new UserProfile("MatteoTwo", BUILDING6, ROOM6, EE));
-//
-           assertEquals(4, Report.getId());
-//        assertNotEquals(reportOne, reportTwo);
-//        assertNotEquals(reportTwo, reportThrEE);
-//        assertNotEquals(reportOne, reportThrEE);
+        assertEquals(4, Report.getId());
     }
 
     @Test
@@ -103,15 +93,6 @@ public class TestPowerAnalysis {
     }
 
     @Test
-    public void testUserProfileDepartment()
-    {
-        UserProfile user = new UserProfile("Davide1", BUILDING5, ROOM3
-                , EE);
-        user.setDepartment(EE);
-        assertEquals(user.getDepartment(), EE);
-    }
-
-    @Test
     public void testThresholdCpu()
     {
         Threshold threshold = new Threshold(5,41, 46);
@@ -131,6 +112,52 @@ public class TestPowerAnalysis {
         Threshold threshold = new Threshold(9,45, 48);
         assertEquals(threshold.getMemThreshold(), 48);
     }
+
+    @Test
+    public void testCpuThresholdValidatorValid()
+    {
+        int valid = ValidateSettingInput.validateCPUThreshold("10");
+        assertTrue(valid > 0);
+    }
+
+    @Test
+    public void testCpuThresholdValidatorInValid()
+    {
+        int valid = ValidateSettingInput.validateCPUThreshold("111");
+        assertTrue(valid == -1);
+    }
+
+    @Test
+    public void testMemThresholdValidatorValid()
+    {
+        int valid = ValidateSettingInput.validateMemThreshold("15");
+        assertTrue(valid > 0);
+    }
+
+    @Test
+    public void testMemThresholdValidatorInValid()
+    {
+        int valid = ValidateSettingInput.validateMemThreshold("-1");
+        assertTrue(valid == -1);
+    }
+
+    @Test
+    public void testDiskThresholdValidatorValid()
+    {
+        int valid = ValidateSettingInput.validateDiskThreshold("567");
+        assertTrue(valid > 0);
+    }
+
+    @Test
+    public void testDiskThresholdValidatorInValid()
+    {
+        int valid = ValidateSettingInput.validateDiskThreshold("1001");
+        assertTrue(valid == -1);
+    }
+
+
+
+
 
 
 
