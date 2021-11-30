@@ -138,7 +138,8 @@ public class PowerAnalysisActiveController extends Controller{
 
     }
 
-    private void populatePage(int curCPU, int curMem, int curDisk) {
+
+    public void populatePage(int curCPU, int curMem, int curDisk) {
 
         Platform.runLater(() -> curCPUText.setText(curCPU + "%"));
         Platform.runLater(() -> curMemText.setText(curMem + " GB"));
@@ -147,12 +148,6 @@ public class PowerAnalysisActiveController extends Controller{
         Platform.runLater(() -> highCPUText.setText(highCPU + "%"));
         Platform.runLater(() -> highMemText.setText(highMem + " GB"));
         Platform.runLater(() -> highDiskText.setText(highDisk + " KB"));
-    }
-
-
-    @FXML
-    protected void goHome()  throws IOException{
-        Main.navigateToNewPage("power-analysis-active");
     }
 
     @FXML

@@ -11,9 +11,17 @@ public class ValidateSettingInput {
     }
 
     public static Threshold validateSettings(TextField cpuThreshold, TextField memoryThreshold, TextField diskThreshold) {
-        int cpuValid = validateCPUThreshold(cpuThreshold);
-        int memValid = validateMemThreshold(memoryThreshold);
-        int diskValid = validateDiskThreshold(diskThreshold);
+        int cpuValid = validateCPUThreshold(cpuThreshold.getText());
+        if (cpuValid < 0)
+            cpuThreshold.setText(INVALID);
+
+        int memValid = validateMemThreshold(memoryThreshold.getText());
+        if (memValid < 0)
+            memoryThreshold.setText(INVALID);
+
+        int diskValid = validateDiskThreshold(diskThreshold.getText());
+        if (diskValid < 0)
+            diskThreshold.setText(INVALID);
 
         Threshold threshold = null;
 
@@ -25,12 +33,12 @@ public class ValidateSettingInput {
         return threshold;
     }
 
-    private static int validateDiskThreshold(TextField diskThreshold) {
+    private static int validateDiskThreshold(String  diskThreshold) {
         int valid;
 
         try
         {
-            int disk = Integer.parseInt(diskThreshold.getText());
+            int disk = Integer.parseInt(diskThreshold);
             if (disk < 1 || disk > 1000)
                 valid = -1;
             else
@@ -41,18 +49,15 @@ public class ValidateSettingInput {
             valid = -1;
         }
 
-        if (valid < 0)
-            diskThreshold.setText(INVALID);
-
         return valid;
     }
 
-    private static int validateMemThreshold(TextField memoryThreshold) {
-        int valid;
+    private static int validateMemThreshold(String memoryThreshold) {
 
+        int valid;
         try
         {
-            int mem = Integer.parseInt(memoryThreshold.getText());
+            int mem = Integer.parseInt(memoryThreshold);
             if (mem < 1 || mem > 16)
                 valid = -1;
             else
@@ -63,19 +68,15 @@ public class ValidateSettingInput {
             valid = -1;
         }
 
-        if (valid < 0)
-            memoryThreshold.setText(INVALID);
-
         return valid;
     }
 
-    private static int validateCPUThreshold(TextField cpuThreshold) {
+    private static int validateCPUThreshold(String cpuThreshold) {
 
         int valid;
-
         try
         {
-            int cpu = Integer.parseInt(cpuThreshold.getText());
+            int cpu = Integer.parseInt(cpuThreshold);
             if (cpu < 1 || cpu > 100)
                 valid = -1;
             else
@@ -85,9 +86,6 @@ public class ValidateSettingInput {
         {
             valid = -1;
         }
-
-        if (valid < 0)
-            cpuThreshold.setText(INVALID);
 
         return valid;
     }

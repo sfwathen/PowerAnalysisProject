@@ -37,18 +37,46 @@ public class TestPowerAnalysis {
     public void testIdCounter()
     {
         Threshold threshold = new Threshold(11,79, 33);
-        Report reportOne = new Report(null, null, null, null,
-                false, threshold, new UserProfile(MATTEONAME, BUILDING5, ROOM3
-                , "SW"));
-        Report reportTwo = new Report(null, null, null, null,
-                false, threshold, new UserProfile("MatteoOne", BUILDING6, ROOM5, "CPE"));
-        Report reportThrEE = new Report(null, null, null, null,
-                false, threshold, new UserProfile("MatteoTwo", BUILDING6, ROOM6, EE));
+        Report.setId(1);
+        for (int i = 0; i < 3; i++)
+        {
+            new Report(null, null, null, null,
+                    false, threshold, new UserProfile(MATTEONAME, BUILDING5, ROOM3
+                    , "SW"));
+        }
+//        Report reportOne = new Report(null, null, null, null,
+//                false, threshold, new UserProfile(MATTEONAME, BUILDING5, ROOM3
+//                , "SW"));
+//        Report reportTwo = new Report(null, null, null, null,
+//                false, threshold, new UserProfile("MatteoOne", BUILDING6, ROOM5, "CPE"));
+//        Report reportThrEE = new Report(null, null, null, null,
+//                false, threshold, new UserProfile("MatteoTwo", BUILDING6, ROOM6, EE));
+//
+           assertEquals(4, Report.getId());
+//        assertNotEquals(reportOne, reportTwo);
+//        assertNotEquals(reportTwo, reportThrEE);
+//        assertNotEquals(reportOne, reportThrEE);
+    }
 
-        assertEquals(4, Report.getId());
-        assertNotEquals(reportOne, reportTwo);
-        assertNotEquals(reportTwo, reportThrEE);
-        assertNotEquals(reportOne, reportThrEE);
+    @Test
+    public void testFormatID() {
+        int testID = 1;
+        String formattedID = Report.formatID(testID);
+        assertEquals("000001",formattedID);
+    }
+
+    @Test
+    public void testFormatIDTwo() {
+        int testID = 111;
+        String formattedID = Report.formatID(testID);
+        assertEquals("000111",formattedID);
+    }
+
+    @Test
+    public void testFormatIDThree() {
+        int testID = 34567;
+        String formattedID = Report.formatID(testID);
+        assertEquals("034567",formattedID);
     }
 
     @Test
@@ -104,11 +132,7 @@ public class TestPowerAnalysis {
         assertEquals(threshold.getMemThreshold(), 48);
     }
 
-    @Test
-    public void testFormatID() {
-        int testID = 1;
-        String formattedID = Report.formatID(testID);
-        assertEquals("000001",formattedID);
-    }
+
+
 
 }

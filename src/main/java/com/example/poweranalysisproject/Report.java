@@ -137,4 +137,9 @@ public class Report {
     public static int getId() {
         return id;
     }
+
+    public static void setId(int id) {
+        Report.id = id;
+    }
+
 }
