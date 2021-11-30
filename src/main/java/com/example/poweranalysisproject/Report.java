@@ -27,7 +27,7 @@ public class Report {
 
     public Report(String reportStartDate, String reportEndDate, String reportSupervisor, UsageMetrics usageMetrics,
                   boolean flagged, Threshold threshold, UserProfile user) {
-        this.reportID = new SimpleStringProperty(String.format("%06d", id++));
+        this.reportID = new SimpleStringProperty(formatID(id));
         this.reportStartDate = new SimpleStringProperty(reportStartDate);
         this.reportEndDate = new SimpleStringProperty(reportEndDate);
         this.reportSupervisor = new SimpleStringProperty(reportSupervisor);
@@ -46,6 +46,12 @@ public class Report {
 
         ReportSummaryUser userProfile = new ReportSummaryUser(new SimpleStringProperty(user.getName()), this.usageMetrics, this.flagged);
         singleton.addToReportSummaryUser(userProfile);
+    }
+
+    public static String formatID(int idNum) {
+        String res = String.format("%06d", idNum);
+        id++;
+        return res;
     }
 
     public String getReportID() {
